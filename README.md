@@ -1,12 +1,18 @@
 # KaiMonkey - Vulnerable Terraform Infrastructure 
 
-Accurics platform enables immutable security by consistently protecting the full cloud native stack, infrastructure as code and identifying the drifts between them.
+Kaimonkey provides example vulnerable infrastructure to help cloud security, DevSecOps and Devops teams explore and understand common cloud security threats exposed via infrastructure as code.
+
+The KaiMonkey project is sponsored by [Accurics](https://www.accurics.com/).
+
+Accurics™ enables cyber resilience through self-healing as organizations embrace cloud native infrastructure. The Accurics platform self-heals infrastructure by codifying security throughout the development lifecycle. It programmatically detects and resolves risks across Infrastructure as Code before infrastructure is provisioned, and maintains the posture in runtime by programmatically mitigating risks from changes.
 
 ![Accurics](https://github.com/accurics/KaiMonkey/blob/master/logo.png)
 
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202-blue)](https://github.com/accurics/terrascan/blob/master/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/accurics/KaiMonkey/pulls)
+[![community](https://img.shields.io/discourse/status?server=https%3A%2F%2Fcommunity.accurics.com)](https://community.accurics.com)
 
-Accurics keeps your cloud infrastucture in check and allows you to invest more time in adapting latest technologies.
+Accurics keeps your cloud infrastucture in check, freeing up more time for innovation.
 
 * GitHub Repo: https://github.com/accurics/kaimonkey
 * Documentation: https://docs.accurics.com
