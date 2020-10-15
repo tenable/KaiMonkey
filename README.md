@@ -22,7 +22,7 @@ resources through IaC. Just scan your IaC before actually deploying the resource
 
 ## Getting Started
 
-One can immideately get started with Accurics by adding it form marketplace.
+One can immideately get started with Accurics by adding it from marketplace.
 
 Steps to configure Accurics
 
