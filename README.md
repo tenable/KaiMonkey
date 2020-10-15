@@ -20,14 +20,26 @@ Accurics keeps your cloud infrastucture in check and allows you to invest more t
 Accurics-Kaimonkey is an effort to provide a playground vulnerable infrastructure to cloud security, DevSecOps and Devops  and help teams to analyze & stratagies the approach to be taken to secure from code to cloud. 
 
 
-## Getting Started
+## Pre-requisites 
 
+* Terraform 0.12
+* aws cli
+* azure cli
+
+## Steps to setup
+
+```
 git clone https://github.com/accurics/kai-monkey-aws.git
+
 cd kai-monkey-aws
+
 terraform init
+
 terraform plan <-- you can omit this.
+
 terraform apply
 
+```
 One can immideately get started with Accurics by adding it from marketplace.
 
 Steps to configure Accurics
