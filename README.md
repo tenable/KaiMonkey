@@ -77,14 +77,14 @@ Docker is typically the easiest way to get started because you don't need to ins
 ### With Docker
 
 1. `git clone https://github.com/accurics/KaiMonkey.git`
-2. `cd KaiMonkey`
-3. `docker run -v "$(pwd):/iac" -w /iac accurics/terrascan scan -t aws`
+2. `cd KaiMonkey/terraform/aws`
+3. `docker run --rm -v "$(pwd):/iac" -w /iac accurics/terrascan scan -t aws`
 
 ### With native executables
 
 0. Download the appropriate binary from the [releases page](https://github.com/accurics/terrascan/releases).
 1. `git clone https://github.com/accurics/KaiMonkey.git`
-2. `cd KaiMonkey`
+2. `cd KaiMonkey/terraform/aws`
 3. `path/to/terrascan scan -t aws`
 
 ## Getting Started with Accurics
@@ -101,7 +101,7 @@ To create a new environment without using the installation wizard, you will need
 4. Enable the set of policies to scan IaC with.
 5. Verify the details and click on finish.
 
-This will spin up a dashboard, run first scan and present you with a detailed list of violations in the IaC
+This will spin up a dashboard, run the first scan and present you with a detailed list of violations in the IaC
 
 ### Configure to scan your cloud runtime (available with certain commercial plans)
 
@@ -111,4 +111,4 @@ This will spin up a dashboard, run first scan and present you with a detailed li
 4. Select set of policies.
 5. Verify details and finish.
 
-Similar to the IaC scan, the dashboard will highlight security violations in the cloud environments.
+Similar to the IaC scan, the dashboard will highlight security violations in the cloud environment.
