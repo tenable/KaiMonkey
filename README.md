@@ -1,6 +1,7 @@
 # KaiMonkey - Vulnerable Terraform Infrastructure 
 
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202-blue)](https://github.com/accurics/KaiMonkey/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/accurics/KaiMonkey)](https://github.com/accurics/kaimonkey)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/accurics/KaiMonkey/pulls)
 [![community](https://img.shields.io/discourse/status?server=https%3A%2F%2Fcommunity.accurics.com)](https://community.accurics.com)
 
@@ -30,7 +31,7 @@ Accurics keeps your cloud infrastucture in check, freeing up more time for innov
 
 ## Introduction
 
-Accurics-Kaimonkey is an effort to provide a playground vulnerable infrastructure to cloud security, DevSecOps and Devops  and help teams to analyze & stratagies the approach to be taken to secure from code to cloud. 
+Accurics-Kaimonkey is an effort to provide a playground vulnerable infrastructure to cloud security, DevSecOps and Devops  and help teams to analyze & strategies the approach to be taken to secure from code to cloud. 
 
 The project is intentionally vulnerable infrastructure as code which can help teams get familiar with IaC security issues and verify that their IaC scanner is working.  We intend to maintain and enhance the project over time, to not only increase the types of problems represented but to add support for additional IaC and Cloud providers.  Contributions are welcome.
 
@@ -65,7 +66,7 @@ terraform plan <-- you can omit this.
 terraform apply
 
 ```
-One can immideately get started with Accurics by adding it from marketplace.
+One can immediately get started with Accurics by adding it from the marketplace.
 
 Steps to configure Accurics
 
@@ -87,4 +88,4 @@ This will spin up a dashboard and run first scan and present you with detailed l
 4. Select set of policies.
 5. Verify details and finish.
 
-Similar to IaC scan, dashboard will highlight security violations in cloud environment.
+Similar to IaC scan, dashboard will highlight security violations in cloud environments.
