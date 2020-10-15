@@ -46,9 +46,9 @@ Terrascan provides
 ## Getting Started
 
 ```
-git clone https://github.com/accurics/kai-monkey-aws.git
+git clone https://github.com/accurics/KaiMonkey.git
 
-cd kai-monkey-aws
+cd KaiMonkey/terraform/aws/
 
 terraform init
 

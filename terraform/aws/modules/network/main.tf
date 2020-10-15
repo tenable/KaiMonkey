@@ -175,7 +175,7 @@ resource "aws_lb_listener" "km_frontend_listener_redirect" {
   port              = "80"
   protocol          = "HTTP"
   default_action {
-    target_group_arn = "${aws_lb_target_group.km_lb_target.id}"
+    target_group_arn = aws_lb_target_group.km_lb_target.id
     type             = "forward"
   }
 }
