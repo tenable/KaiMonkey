@@ -35,7 +35,7 @@ KaiMonkey is an effort to provide a playground vulnerable infrastructure to clou
 
 The project is intentionally vulnerable infrastructure as code which can help teams get familiar with IaC security issues and verify that their IaC scanner is working.  We intend to maintain and enhance the project over time, to not only increase the types of problems represented but to add support for additional IaC and Cloud providers.  Contributions are welcome.
 
-To learn more about the security risks in KaiMonkey, you can leverage Terrascan (https://github.com/accurics/terrascan), our open source tool to detect compliance and security violations before provisioning the infrastructure.  You can also use the Accurics platform for an experience that extends beyond the command line with a SaaS console and pre-built integrations into your source code repositories, ticketing systems, CI/CD pipelines, etc.
+To learn more about the security risks in KaiMonkey, you can leverage [Terrascan](https://github.com/accurics/terrascan), our open source tool to detect compliance and security violations before provisioning the infrastructure.  You can also use the Accurics platform for an experience that extends beyond the command line with a SaaS console and pre-built integrations into your source code repositories, ticketing systems, CI/CD pipelines, etc.
 
 Terrascan provides
 
