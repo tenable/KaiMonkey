@@ -67,7 +67,7 @@ Accurics provides
 1. `git clone https://github.com/accurics/KaiMonkey.git`
 2. `cd KaiMonkey/terraform/aws/`
 3. `terraform init`
-4. `terraform plan` <-- optional
+4. `terraform plan` &#10229; optional
 5. `terraform apply`
 
 ## Getting Started with Terrascan
