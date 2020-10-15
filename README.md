@@ -4,7 +4,13 @@ Accurics platform enables immutable security by consistently protecting the full
 
 ![Accurics](https://github.com/accurics/kai-monkey-aws/blob/main/logo.png)
 
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202-blue)](https://github.com/accurics/terrascan/blob/master/LICENSE)
+
 Accurics keeps your cloud infrastucture in check and allows you to invest more time in adapting latest technologies.
+
+* GitHub Repo: https://github.com/accurics/kai-monkey-aws
+* Documentation: https://docs.accurics.com
+* Discuss: https://community.accurics.com
 
 ## Table of Contents
 
