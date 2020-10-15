@@ -1,4 +1,4 @@
-# Accurics - Tag Line
+# KaiMonkey - Vulnerable Terraform Infrastructure 
 
 Accurics platform enables immutable security by consistently protecting the full cloud native stack, infrastructure as code and identifying the drifts between them.
 
