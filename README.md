@@ -31,11 +31,11 @@ Accurics keeps your cloud infrastucture in check, freeing up more time for innov
 
 ## Introduction
 
-Accurics-Kaimonkey is an effort to provide a playground vulnerable infrastructure to cloud security, DevSecOps and Devops  and help teams to analyze & strategies the approach to be taken to secure from code to cloud. 
+KaiMonkey is an effort to provide a playground vulnerable infrastructure to cloud security, DevSecOps and DevOps and help teams to analyze & strategize the approach to be taken to secure from code to cloud. 
 
 The project is intentionally vulnerable infrastructure as code which can help teams get familiar with IaC security issues and verify that their IaC scanner is working.  We intend to maintain and enhance the project over time, to not only increase the types of problems represented but to add support for additional IaC and Cloud providers.  Contributions are welcome.
 
-In addition to KaiMonkey, you can leverage Terrascan (https://github.com/accurics/terrascan) open source tool to detect compliance and security violations in kaiMonkey before provisioning the  infrastructure.
+To learn more about the security risks in KaiMonkey, you can leverage Terrascan (https://github.com/accurics/terrascan), our open source tool to detect compliance and security violations before provisioning the infrastructure.  You can also use the Accurics platform for an experience that extends beyond the command line with a SaaS console and pre-built integrations into your source code repositories, ticketing systems, CI/CD pipelines, etc.
 
 Terrascan provides
 
@@ -44,48 +44,71 @@ Terrascan provides
 * Scanning of Kubernetes YAML/JSON
 * Support for AWS, Azure, GCP, Kubernetes and GitHub
 
-## Pre-requisites 
+Accurics provides
+
+* 1800+ Policies for security best practices
+* Scanning of many IaC and orchestration providers, such as Terraform, Kubernetes, Helm, Istio, Amazon CloudFormation, Azure Resource Manager, Google Cloud Deployment Manager, and more
+* Support for AWS, Azure, GCP cloud environments
+* Compliance reporting for standards such as GDPR, CIS, SOC2, HIPAA, etc.
+* Deeper security analysis including breach path prediction and determination of blast radius
+* Integration of scanning and remediation into your repos and pipelines, including automated fixes and pull or merge requests
+* More information is available on [our website](https://www.accurics.com/pricing/).
+
+## KaiMonkey Pre-requisites 
 
 * Terraform 0.12
 * aws cli
 * azure cli
-* Optional - Terrascan open source tool to scan the kaimonkey
+* Optional - Terrascan open source tool to scan KaiMonkey
 
 
-## Getting Started
+## Getting Started with KaiMonkey
 
-```
-git clone https://github.com/accurics/KaiMonkey.git
+1. `git clone https://github.com/accurics/KaiMonkey.git`
+2. `cd KaiMonkey/terraform/aws/`
+3. `terraform init`
+4. `terraform plan` <-- optional
+5. `terraform apply`
 
-cd KaiMonkey/terraform/aws/
+## Getting Started with Terrascan
 
-terraform init
+Docker is typically the easiest way to get started because you don't need to install Terrascan on your system.  Terrascan builds are also available from the [releases page](https://github.com/accurics/terrascan/releases).
 
-terraform plan <-- you can omit this.
+### With Docker
 
-terraform apply
+1. `git clone https://github.com/accurics/KaiMonkey.git`
+2. `cd KaiMonkey`
+3. `docker run -v "$(pwd):/iac" -w /iac accurics/terrascan scan -t aws`
 
-```
-One can immediately get started with Accurics by adding it from the marketplace.
+### With native executables
 
-Steps to configure Accurics
+0. Download the appropriate binary from the [releases page](https://github.com/accurics/terrascan/releases).
+1. `git clone https://github.com/accurics/KaiMonkey.git`
+2. `cd KaiMonkey`
+3. `path/to/terrascan scan -t aws`
 
-### IaC Setup
+## Getting Started with Accurics
 
-1. Create a new environment from Accurics dashboard. Select a cloud provider.
-2. Connect to Github and allow Accurics to read github repos.
+One can immediately get started with Accurics by adding the Accurics app from the [GitHub marketplace](https://github.com/marketplace/accurics).  The installation process will walk you through the process of configuring Accurics for your repo.  Note that you may need to fork KaiMonkey into your repo if you want it to show up with your projects.
+
+To create a new environment without using the installation wizard, you will need to first login to your Accurics dashboard.
+
+### Configure to scan your IaC repo
+
+1. Create a new environment from Accurics dashboard, selecting a cloud provider.
+2. Connect to GitHub and allow Accurics to read GitHub repos.
 3. Select the repo to scan.
 4. Enable the set of policies to scan IaC with.
 5. Verify the details and click on finish.
 
-This will spin up a dashboard and run first scan and present you with detailed list of violations in IaC
+This will spin up a dashboard, run first scan and present you with a detailed list of violations in the IaC
 
-### Cloud Setup
+### Configure to scan your cloud runtime (available with certain commercial plans)
 
-1. Create a new environment from Accurics Dashboard and select a cloud provider.
-2. Enable Configure CloudScan checkbox and provide requested details.
+1. Create a new environment from Accurics Dashboard, selecting a cloud provider.
+2. Enable Configure Cloud Scan checkbox and provide requested details.
 3. Ignore IaC configuration if you only want to run cloud scan.
 4. Select set of policies.
 5. Verify details and finish.
 
-Similar to IaC scan, dashboard will highlight security violations in cloud environments.
+Similar to the IaC scan, the dashboard will highlight security violations in the cloud environments.
