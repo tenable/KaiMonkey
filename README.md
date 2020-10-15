@@ -6,7 +6,7 @@ Accurics platform enables immutable security by consistently protecting the full
 
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202-blue)](https://github.com/accurics/terrascan/blob/master/LICENSE)
 
-Accurics keeps your cloud infrastucture in check and allows you to invest more time in adapting latest technologies.
+Accurics keeps your cloud infrastructure in check and allows you to invest more time in adapting latest technologies.
 
 * GitHub Repo: https://github.com/accurics/kaimonkey
 * Documentation: https://docs.accurics.com
@@ -24,7 +24,7 @@ Accurics keeps your cloud infrastucture in check and allows you to invest more t
 
 ## Introduction
 
-Accurics-Kaimonkey is an effort to provide a playground vulnerable infrastructure to cloud security, DevSecOps and Devops  and help teams to analyze & stratagies the approach to be taken to secure from code to cloud. 
+Accurics-Kaimonkey is an effort to provide a playground vulnerable infrastructure to cloud security, DevSecOps and Devops  and help teams to analyze & strategies the approach to be taken to secure from code to cloud. 
 
 The project is intentionally vulnerable infrastructure as code which can help teams get familiar with IaC security issues and verify that their IaC scanner is working.  We intend to maintain and enhance the project over time, to not only increase the types of problems represented but to add support for additional IaC and Cloud providers.  Contributions are welcome.
 
@@ -59,7 +59,7 @@ terraform plan <-- you can omit this.
 terraform apply
 
 ```
-One can immideately get started with Accurics by adding it from marketplace.
+One can immediately get started with Accurics by adding it from the marketplace.
 
 Steps to configure Accurics
 
@@ -81,4 +81,4 @@ This will spin up a dashboard and run first scan and present you with detailed l
 4. Select set of policies.
 5. Verify details and finish.
 
-Similar to IaC scan, dashboard will highlight security violations in cloud environment.
+Similar to IaC scan, dashboard will highlight security violations in cloud environments.
