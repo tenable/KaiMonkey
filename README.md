@@ -1,4 +1,4 @@
-# Accurics - Tag Line
+# Accurics - Immutable Security For Immutable Infrastructure
 
 Accurics platform enables immutable security by consistently protecting the full cloud native stack, infrastructure as code and identifying the drifts between them.
 
