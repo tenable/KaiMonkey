@@ -2,7 +2,7 @@
 
 Accurics platform enables immutable security by consistently protecting the full cloud native stack, infrastructure as code and identifying the drifts between them.
 
-![Accurics](https://github.com/accurics/kai-monkey-aws/blob/main/logo.png)
+![Accurics](https://github.com/accurics/KaiMonkey/blob/master/logo.png)
 
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202-blue)](https://github.com/accurics/terrascan/blob/master/LICENSE)
 
