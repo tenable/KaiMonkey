@@ -17,10 +17,16 @@ Accurics keeps your cloud infrastucture in check and allows you to invest more t
 
 ## Introduction
 
-Accurics can scan throught your cloud environment and identify security vulnerabilities. Also one can also identify these issues before deploying the 
-resources through IaC. Just scan your IaC before actually deploying the resource and remediate the issues before they enter in environments.
+Accurics-Kaimonkey is an effort to provide a playground vulnerable infrastructure to cloud security, DevSecOps and Devops  and help teams to analyze & stratagies the approach to be taken to secure from code to cloud. 
+
 
 ## Getting Started
+
+git clone https://github.com/accurics/kai-monkey-aws.git
+cd kai-monkey-aws
+terraform init
+terraform plan <-- you can omit this.
+terraform apply
 
 One can immideately get started with Accurics by adding it from marketplace.
 
