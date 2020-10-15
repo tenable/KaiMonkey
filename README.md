@@ -5,6 +5,9 @@ Accurics platform enables immutable security by consistently protecting the full
 ![Accurics](https://github.com/accurics/KaiMonkey/blob/master/logo.png)
 
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202-blue)](https://github.com/accurics/terrascan/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/accurics/KaiMonkey)](https://github.com/accurics/kaimonkey)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/accurics/KaiMonkey/pulls)
+[![community](https://img.shields.io/discourse/status?server=https%3A%2F%2Fcommunity.accurics.com)](https://community.accurics.com)
 
 Accurics keeps your cloud infrastructure in check and allows you to invest more time in adapting latest technologies.
 
