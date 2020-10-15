@@ -26,6 +26,8 @@ Accurics keeps your cloud infrastucture in check and allows you to invest more t
 
 Accurics-Kaimonkey is an effort to provide a playground vulnerable infrastructure to cloud security, DevSecOps and Devops  and help teams to analyze & stratagies the approach to be taken to secure from code to cloud. 
 
+The project is intentionally vulnerable infrastructure as code which can help teams get familiar with IaC security issues and verify that their IaC scanner is working.  We intend to maintain and enhance the project over time, to not only increase the types of problems represented but to add support for additional IaC and Cloud providers.  Contributions are welcome.
+
 In addition to KaiMonkey, you can leverage Terrascan (https://github.com/accurics/terrascan) open source tool to detect compliance and security violations in kaiMonkey before provisioning the  infrastructure.
 
 Terrascan provides
