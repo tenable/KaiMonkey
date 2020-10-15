@@ -8,13 +8,14 @@ Accurics platform enables immutable security by consistently protecting the full
 
 Accurics keeps your cloud infrastucture in check and allows you to invest more time in adapting latest technologies.
 
-* GitHub Repo: https://github.com/accurics/kai-monkey-aws
+* GitHub Repo: https://github.com/accurics/kaimonkey
 * Documentation: https://docs.accurics.com
 * Discuss: https://community.accurics.com
 
 ## Table of Contents
 
 * [Introduction](#introduction)
+* [Pre-requisites ](#Pre-requisites)
 * [Getting Started](#getting-started)
   * [IAC](#IaC-Setup)
   * [Cloud](#Cloud-setup)
@@ -25,14 +26,24 @@ Accurics keeps your cloud infrastucture in check and allows you to invest more t
 
 Accurics-Kaimonkey is an effort to provide a playground vulnerable infrastructure to cloud security, DevSecOps and Devops  and help teams to analyze & stratagies the approach to be taken to secure from code to cloud. 
 
+In addition to KaiMonkey, you can leverage Terrascan (https://github.com/accurics/terrascan) open source tool to detect compliance and security violations in kaiMonkey before provisioning the  infrastructure.
+
+Terrascan provides
+
+* 500+ Policies for security best practices
+* Scanning of Terraform 12+ (HCL2)
+* Scanning of Kubernetes YAML/JSON
+* Support for AWS, Azure, GCP, Kubernetes and GitHub
 
 ## Pre-requisites 
 
 * Terraform 0.12
 * aws cli
 * azure cli
+* Optional - Terrascan open source tool to scan the kaimonkey
 
-## Steps to setup
+
+## Getting Started
 
 ```
 git clone https://github.com/accurics/kai-monkey-aws.git
