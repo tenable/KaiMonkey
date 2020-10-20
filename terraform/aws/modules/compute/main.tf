@@ -7,26 +7,6 @@ data "template_file" "km_ecs_template" {
   }
 }
 
-data "aws_ami" "km_vm" {
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
-  owners = ["099720109477"] # Canonical
-
-  tags = merge(var.default_tags, {
-    Name        = "km_vm_${var.environment}"
-  })
-}
-
 resource "aws_iam_role" "km_ecs_task_execution_role" {
   name = "km_ecs_task_execution_role_${var.environment}"
 
@@ -98,8 +78,8 @@ resource "aws_ecs_cluster" "km_ecs_cluster" {
   })
 }
 
-resource "aws_ecs_task_definition" "km_siac_task" {
-  family                   = "km_siac_task_${var.environment}"
+resource "aws_ecs_task_definition" "km_ecs_task" {
+  family                   = "km_ecs_task_${var.environment}"
   container_definitions    = data.template_file.km_ecs_template.rendered
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
@@ -107,18 +87,19 @@ resource "aws_ecs_task_definition" "km_siac_task" {
   memory                   = 1024
   execution_role_arn       = aws_iam_role.km_ecs_task_execution_role.arn
   tags = merge(var.default_tags, {
-    Name = "km_siac_task_${var.environment}"
+    Name = "km_ecs_task_${var.environment}"
   })
 }
 
 resource "aws_ecs_service" "km_ecs_service" {
   name            = "km_ecs_service_${var.environment}"
   cluster         = aws_ecs_cluster.km_ecs_cluster.id
-  task_definition = aws_ecs_task_definition.km_siac_task.arn
+  task_definition = aws_ecs_task_definition.km_ecs_task.arn
   desired_count   = 1
   launch_type     = "FARGATE"
+
   load_balancer {
-    target_group_arn = var.elb_target_group_id
+    target_group_arn = var.elb_target_group_arn
     container_name   = "km-frontend"
     container_port   = 80
   }
@@ -127,6 +108,8 @@ resource "aws_ecs_service" "km_ecs_service" {
     subnets          = var.private_subnet
     security_groups  = [ var.elb_sg ]
   }
+  tags = merge(var.default_tags, {
+  })
 }
 
 resource "aws_cloudwatch_log_group" "km_log_group" {
@@ -135,5 +118,15 @@ resource "aws_cloudwatch_log_group" "km_log_group" {
 
   tags = merge(var.default_tags, {
     Name = "km_log_group_${var.environment}"
+  })
+}
+
+resource "aws_instance" "km_vm"{
+  ami = data.aws_ami.ubuntu_ami.id
+  instance_type = "t2.micro"
+  vpc_security_group_ids = [ var.elb_sg ]
+  subnet_id = var.public_subnet[0]
+  tags = merge(var.default_tags, {
+    Name = "km_vm_${var.environment}"
   })
 }

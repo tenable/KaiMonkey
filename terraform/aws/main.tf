@@ -1,5 +1,6 @@
 provider "aws" {
   region = var.region
+  version = "~> 3.11"
 }
 
 module "network" {
@@ -22,8 +23,9 @@ module "compute" {
   source = "./modules/compute"
   environment = var.environment
   region = var.region
-  elb_target_group_id = module.network.target_lb_group_id
+  elb_target_group_arn = module.network.target_lb_group_arn
   private_subnet = module.network.private_subnet
+  public_subnet = module.network.public_subnet
   elb_sg = module.network.target_lb_security_group
   elb_url = module.network.elb_url
 }

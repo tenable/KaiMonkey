@@ -1,5 +1,5 @@
 region      = "us-east-1"
-environment = "development"
+environment = "dev7"
 db_username = "kai_monkey_user_ob6RGj"
 db_password = "kHJ!4dusp7A#Xf21URhhZ1#"
 

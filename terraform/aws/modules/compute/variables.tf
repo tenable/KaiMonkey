@@ -8,7 +8,8 @@ variable "default_tags" {
 }
 
 variable "region" {}
-variable "elb_target_group_id" {}
+variable "elb_target_group_arn" {}
 variable "private_subnet" {}
+variable "public_subnet" {}
 variable "elb_sg" {}
 variable "elb_url" {}

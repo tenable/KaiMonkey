@@ -153,52 +153,28 @@ resource "aws_security_group" "km_ecs_sg" {
   })
 }
 
-# ### ALB
-
 resource "aws_lb" "km_lb" {
-  name            = "siac-lb-${var.environment}"
+  name            = "km-lb-${var.environment}"
   subnets         = aws_subnet.km_public_subnet.*.id
   security_groups = [aws_security_group.km_alb_sg.id]
 }
 
 resource "aws_lb_target_group" "km_lb_target" {
-  name        = "siac-ecs-web-${var.environment}"
+  name        = "km-lb-target-group-${var.environment}"
   port        = 80
   protocol    = "HTTP"
   vpc_id      = aws_vpc.km_vpc.id
   target_type = "ip"
+  depends_on = [ aws_lb.km_lb ]
 }
 
 # Redirect all traffic from the ALB to the target group
-resource "aws_lb_listener" "km_frontend_listener_redirect" {
-  load_balancer_arn = aws_lb.km_lb.id
+resource "aws_lb_listener" "km_frontend_listener" {
+  load_balancer_arn = aws_lb.km_lb.arn
   port              = "80"
   protocol          = "HTTP"
   default_action {
-    target_group_arn = aws_lb_target_group.km_lb_target.id
+    target_group_arn = aws_lb_target_group.km_lb_target.arn
     type             = "forward"
   }
-}
-
-data "aws_ami" "ubuntu" {
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
-  owners = ["099720109477"] # Canonical
-}
-
-resource "aws_instance" "km_ec2_web"{
-  ami = data.aws_ami.ubuntu.id
-  instance_type = "t2.micro"
-  vpc_security_group_ids = [ aws_security_group.km_alb_sg.id ]
-  subnet_id = aws_subnet.km_public_subnet[0].id
 }

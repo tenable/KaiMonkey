@@ -55,7 +55,7 @@ resource "aws_db_instance" "km_db" {
   db_subnet_group_name      = aws_db_subnet_group.km_rds_subnet_grp.id
   identifier                = "km-db-${var.environment}"
   storage_encrypted         = true
-  skip_final_snapshot       = false
+  skip_final_snapshot       = true
   final_snapshot_identifier = "km-db-${var.environment}-db-destroy-snapshot"
   kms_key_id                = aws_kms_key.km_db_kms_key.arn
   tags = merge(var.default_tags, {
