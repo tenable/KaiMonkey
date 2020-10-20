@@ -16,7 +16,7 @@
       "options": {
         "awslogs-group": "${LOG_GROUP}",
         "awslogs-region": "${REGION}",
-        "awslogs-stream-prefix": "siac-ui"
+        "awslogs-stream-prefix": "km-frontend"
       }
     }
   }
