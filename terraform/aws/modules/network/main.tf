@@ -3,6 +3,7 @@ data "aws_availability_zones" "available" {}
 # Create a VPC to launch our instances into
 resource "aws_vpc" "km_vpc" {
   cidr_block           = "10.0.0.0/16"
+  
   enable_dns_support   = true
   enable_dns_hostnames = true
 
@@ -80,6 +81,7 @@ resource "aws_route_table" "km_route_table" {
 
   route {
     cidr_block     = "0.0.0.0/0"
+    
     nat_gateway_id = element(aws_nat_gateway.km_nat_gateway.*.id, count.index)
   }
 
@@ -108,6 +110,7 @@ resource "aws_security_group" "km_alb_sg" {
     protocol    = "tcp"
     from_port   = 443
     to_port     = 443
+    
     cidr_blocks = ["0.0.0.0/0"]
   }
 
@@ -115,6 +118,7 @@ resource "aws_security_group" "km_alb_sg" {
     protocol    = "tcp"
     from_port   = 80
     to_port     = 80
+    
     cidr_blocks = ["0.0.0.0/0"]
   }
 
