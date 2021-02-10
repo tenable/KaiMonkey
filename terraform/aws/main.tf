@@ -19,6 +19,7 @@ module "storage" {
   db_password    = var.db_password
 }
 
+    
 module "compute" {
   source = "./modules/compute"
   environment = var.environment
