@@ -9,6 +9,7 @@ module "network" {
   default_tags = var.default_tags
 }
 
+  
 module "storage" {
   source         = "./modules/storage"
   private_subnet = module.network.private_subnet
