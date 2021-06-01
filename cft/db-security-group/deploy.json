@@ -1,0 +1,34 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Resources": {
+        "MyDBSecurityGroup": {
+            "Type": "AWS::RDS::DBSecurityGroup",
+            "Properties": {
+                "EC2VpcId": {
+                    "Ref": "VpcId"
+                },
+                "DBSecurityGroupIngress": [
+                    {
+                        "CIDRIP": "10.0.0.0/24",
+                        "EC2SecurityGroupName": {
+                            "Ref": "WebServerSecurityGroup"
+                        }
+                    },
+                    {
+                        "CIDRIP": "192.168.0.0/24",
+                        "EC2SecurityGroupName": {
+                            "Ref": "WebServerSecurityGroup"
+                        }
+                    },
+                    {
+                        "CIDRIP": "0.0.0.0/0",
+                        "EC2SecurityGroupName": {
+                            "Ref": "WebServerSecurityGroup"
+                        }
+                    }
+                ],
+                "GroupDescription": "Frontend Access"
+            }
+        }
+    }
+}

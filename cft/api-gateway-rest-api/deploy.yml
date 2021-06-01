@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Parameters:
+  apiKeySourceType:
+    Type: String
+    Default: MyApiSrc
+  apiName:
+    Type: String
+    Default: MyApi
+  binaryMediaType1:
+    Type: String
+  binaryMediaType2:
+    Type: String
+  minimumCompressionSize:
+    Type: String
+Resources:
+  MyRestApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      ApiKeySourceType: !Ref apiKeySourceType
+      BinaryMediaTypes:
+        - !Ref binaryMediaType1
+        - !Ref binaryMediaType2
+      MinimumCompressionSize: -1
+      EndpointConfiguration:
+        Types:
+          - EDGE
+      Name: !Ref apiName

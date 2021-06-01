@@ -1,0 +1,21 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "myCacheCluster": {
+      "Type": "AWS::ElastiCache::CacheCluster",
+      "Properties": {
+        "AZMode": "crosss-az",
+        "CacheNodeType": "cache.m3.medium",
+        "Engine": "redis",
+        "EngineVersion": "2.0.9",
+        "NumCacheNodes": 3,
+        "PreferredAvailabilityZones": [
+          "us-west-2a",
+          "us-west-2a",
+          "us-west-2b"
+        ]
+      }
+    }
+  }
+}
+
