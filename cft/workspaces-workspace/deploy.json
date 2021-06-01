@@ -1,0 +1,16 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "Prod": {
+      "Type" : "AWS::WorkSpaces::Workspace",
+      "Properties" : {
+          "BundleId" : "String",
+          "DirectoryId" : "String",
+          "RootVolumeEncryptionEnabled" : false,
+          "UserName" : "String",
+          "UserVolumeEncryptionEnabled" : false,
+          "VolumeEncryptionKey" : "String"
+        }
+    }
+  }
+}

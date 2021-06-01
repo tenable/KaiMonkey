@@ -1,0 +1,42 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Resources": {
+        "FileSystemResource": {
+            "Type": "AWS::EFS::FileSystem",
+            "Properties": {
+                "PerformanceMode": "maxIO",
+                "LifecyclePolicies": [
+                    {
+                        "TransitionToIA": "AFTER_30_DAYS"
+                    }
+                ],
+                "Encrypted": false,
+                "FileSystemTags": [
+                    {
+                        "Key": "Name",
+                        "Value": "TestFileSystem"
+                    }
+                ],
+                "FileSystemPolicy": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Action": [
+                                "elasticfilesystem:*"
+                            ],
+                            "Principal": {
+                                "AWS": "*"
+                            },
+                            "Resource": "*"
+                        }
+                    ]
+                },
+                "BackupPolicy": {
+                    "Status": "ENABLED"
+                },
+                "KmsKeyId": ""
+            }
+        }
+    }
+}

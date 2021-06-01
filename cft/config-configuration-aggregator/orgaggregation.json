@@ -1,0 +1,20 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Creating ECS service",
+  "Resources": {
+    "MyConfigurationAggregator1": {
+      "Type": "AWS::Config::ConfigurationAggregator",
+      "Properties": {
+        "OrganizationAggregationSource": {
+          "RoleArn": "arn:aws:iam::012345678912:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+          "AwsRegions": [
+            "us-west-2",
+            "us-east-1"
+          ],
+          "AllAwsRegions": false
+        },
+        "ConfigurationAggregatorName": "MyConfigurationAggregator1"
+      }
+    }
+  }
+}

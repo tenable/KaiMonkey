@@ -1,0 +1,17 @@
+Resources:
+  VDeliveryStream:
+    Type: AWS::KinesisFirehose::DeliveryStream
+    Properties:
+        DeliveryStreamName: deliveryStreamName
+        DeliveryStreamType: KinesisStreamAsSource
+        KinesisStreamSourceConfiguration:
+            KinesisStreamARN: kinesisStreamARN
+            RoleARN: kinesisStreamRoleArn
+        ExtendedS3DestinationConfiguration:
+            BucketARN: s3bucketArn
+            BufferingHints:
+                IntervalInSeconds: 60
+                SizeInMBs: 50
+            CompressionFormat: UNCOMPRESSED
+            Prefix: firehose/
+            RoleARN: deliveryRoleArn
