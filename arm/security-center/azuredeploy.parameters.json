@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.1",
+  "parameters": {
+      "workspaceName": {
+          "value": "YOUR_WORKSPACE_NAME"
+      },
+      "workspaceRgName": {
+          "value": "YOUR_WORKSPACE_RESOURCE_GROUP_NAME"
+      },
+      "autoProvisionSetting": {
+          "value": "On"
+      },
+      "ascOwnerEmail": {
+          "value": "YOUR_EMAIL_CONTACT"
+      },
+      "ascOwnerContact": {
+          "value": "YOUR_PHONE_NUMBER"
+      },
+      "highSeverityAlertNotification": {
+          "value": "On"
+      },
+      "subscriptionOwnerNotification": {
+          "value": "On"
+      },
+      "virtualMachineTier": {
+          "value": "Standard"
+      },
+      "appServiceTier": {
+          "value": "Standard"
+      },
+      "paasSQLServiceTier": {
+          "value": "Standard"
+      },
+      "sqlServerOnVmTier": {
+          "value": "Standard"
+      },
+      "storageAccountTier": {
+          "value": "Standard"
+      },
+      "kubernetesServiceTier": {
+          "value": "Standard"
+      },
+      "containerRegistryTier": {
+          "value": "Standard"
+      },
+      "keyvaultTier": {
+          "value": "Free"
+      },
+      "integrationName": {
+          "value": "WDATP"
+      },
+      "integrationEnabled": {
+          "value": true
+      }
+  }
+}
