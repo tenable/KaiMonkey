@@ -1,0 +1,209 @@
+{
+    "aws_ebs_volume": [
+        {
+            "id": "aws_ebs_volume.NewVolume",
+            "name": "NewVolume",
+            "source": "ebs-volume/deploy.json",
+            "line": 1,
+            "type": "aws_ebs_volume",
+            "config": {
+                "tags": [
+                    {
+                        "Key": "MyTag",
+                        "Value": "TagValue"
+                    }
+                ],
+                "name": "",
+                "kms_key_id": "KmsKeyId"
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ],
+    "aws_security_group": [
+        {
+            "id": "aws_security_group.OpenHttpPort",
+            "name": "OpenHttpPort",
+            "source": "security-group/deploy.yml",
+            "line": 1,
+            "type": "aws_security_group",
+            "config": {
+                "tags": null,
+                "description": "Allow http to client host",
+                "name": "",
+                "egress": [
+                    {
+                        "protocol": "tcp",
+                        "description": "Allow http to client host",
+                        "cidr_blocks": [
+                            "0.0.0.0/0"
+                        ],
+                        "ipv6_cidr_blocks": [
+                            ""
+                        ],
+                        "from_port": 80,
+                        "to_port": 80
+                    }
+                ],
+                "ingress": [
+                    {
+                        "protocol": "tcp",
+                        "description": "Allow http to client host",
+                        "cidr_blocks": [
+                            "0.0.0.0/0"
+                        ],
+                        "ipv6_cidr_blocks": [
+                            ""
+                        ],
+                        "from_port": 80,
+                        "to_port": 80
+                    }
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        },
+        {
+            "id": "aws_security_group.SshRule",
+            "name": "SshRule",
+            "source": "security-group/deploy.yml",
+            "line": 1,
+            "type": "aws_security_group",
+            "config": {
+                "tags": null,
+                "description": "Allow http to client host",
+                "name": "",
+                "egress": [
+                    {
+                        "protocol": "tcp",
+                        "description": "Allow http to client host",
+                        "cidr_blocks": [
+                            "0.0.0.0/0"
+                        ],
+                        "ipv6_cidr_blocks": [
+                            ""
+                        ],
+                        "from_port": 80,
+                        "to_port": 80
+                    }
+                ],
+                "ingress": [
+                    {
+                        "protocol": "tcp",
+                        "description": "Allow http to client host",
+                        "cidr_blocks": [
+                            "0.0.0.0/0"
+                        ],
+                        "ipv6_cidr_blocks": [
+                            ""
+                        ],
+                        "from_port": 22,
+                        "to_port": 22
+                    },
+                    {
+                        "protocol": "tcp",
+                        "description": "Allow http to client host",
+                        "cidr_blocks": [
+                            "192.16.0.0/16"
+                        ],
+                        "ipv6_cidr_blocks": [
+                            ""
+                        ],
+                        "from_port": 22,
+                        "to_port": 22
+                    }
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        },
+        {
+            "id": "aws_security_group.UnrestrictedUnknown",
+            "name": "UnrestrictedUnknown",
+            "source": "security-group/deploy.yml",
+            "line": 1,
+            "type": "aws_security_group",
+            "config": {
+                "tags": null,
+                "description": "Allow http to client host",
+                "name": "",
+                "egress": [
+                    {
+                        "protocol": "tcp",
+                        "description": "Allow http to client host",
+                        "cidr_blocks": [
+                            "0.0.0.0/0"
+                        ],
+                        "ipv6_cidr_blocks": [
+                            ""
+                        ],
+                        "from_port": 80,
+                        "to_port": 80
+                    }
+                ],
+                "ingress": [
+                    {
+                        "protocol": "tcp",
+                        "description": "Allow http to client host",
+                        "cidr_blocks": [
+                            "0.0.0.0/0"
+                        ],
+                        "ipv6_cidr_blocks": [
+                            ""
+                        ],
+                        "from_port": 22127,
+                        "to_port": 22162
+                    }
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        },
+        {
+            "id": "aws_security_group.NoDescription",
+            "name": "NoDescription",
+            "source": "security-group/deploy.yml",
+            "line": 1,
+            "type": "aws_security_group",
+            "config": {
+                "tags": null,
+                "name": "",
+                "egress": [
+                    {
+                        "protocol": "tcp",
+                        "description": "",
+                        "cidr_blocks": [
+                            "0.0.0.0/0"
+                        ],
+                        "ipv6_cidr_blocks": [
+                            ""
+                        ],
+                        "from_port": 80,
+                        "to_port": 80
+                    }
+                ],
+                "ingress": [
+                    {
+                        "protocol": "tcp",
+                        "description": "",
+                        "cidr_blocks": [
+                            "0.0.0.0/0"
+                        ],
+                        "ipv6_cidr_blocks": [
+                            ""
+                        ],
+                        "from_port": 443,
+                        "to_port": 443
+                    }
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}

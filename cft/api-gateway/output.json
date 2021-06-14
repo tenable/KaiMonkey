@@ -1,0 +1,233 @@
+{
+    "aws_api_gateway_method_settings": [
+        {
+            "id": "aws_api_gateway_method_settings.Prod0",
+            "name": "Prod0",
+            "source": "api-gateway-method-settings/deploy.yml",
+            "line": 1,
+            "type": "aws_api_gateway_method_settings",
+            "config": {
+                "tags": null,
+                "name": "Prod",
+                "settings": [
+                    {
+                        "metrics_enabled": false
+                    }
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        },
+        {
+            "id": "aws_api_gateway_method_settings.Prod1",
+            "name": "Prod1",
+            "source": "api-gateway-method-settings/deploy.yml",
+            "line": 1,
+            "type": "aws_api_gateway_method_settings",
+            "config": {
+                "tags": null,
+                "name": "Prod",
+                "settings": [
+                    {
+                        "metrics_enabled": false
+                    }
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        },
+        {
+            "id": "aws_api_gateway_method_settings.Prod2",
+            "name": "Prod2",
+            "source": "api-gateway-method-settings/deploy.yml",
+            "line": 1,
+            "type": "aws_api_gateway_method_settings",
+            "config": {
+                "tags": null,
+                "name": "Prod",
+                "settings": [
+                    {
+                        "metrics_enabled": true
+                    }
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        },
+        {
+            "id": "aws_api_gateway_method_settings.Prod0",
+            "name": "Prod0",
+            "source": "api-gateway-stage/deploy.json",
+            "line": 1,
+            "type": "aws_api_gateway_method_settings",
+            "config": {
+                "tags": null,
+                "name": "Prod",
+                "settings": [
+                    {
+                        "metrics_enabled": true
+                    }
+                ]
+            },
+            "skip_rules": [
+                {
+                    "rule": "AWS.CloudFormation.Medium.0603",
+                    "comment": ""
+                }
+            ],
+            "max_severity": "",
+            "min_severity": ""
+        },
+        {
+            "id": "aws_api_gateway_method_settings.Prod1",
+            "name": "Prod1",
+            "source": "api-gateway-stage/deploy.json",
+            "line": 1,
+            "type": "aws_api_gateway_method_settings",
+            "config": {
+                "tags": null,
+                "name": "Prod",
+                "settings": [
+                    {
+                        "metrics_enabled": true
+                    }
+                ]
+            },
+            "skip_rules": [
+                {
+                    "rule": "AWS.CloudFormation.Medium.0603",
+                    "comment": ""
+                }
+            ],
+            "max_severity": "",
+            "min_severity": ""
+        },
+        {
+            "id": "aws_api_gateway_method_settings.Prod2",
+            "name": "Prod2",
+            "source": "api-gateway-stage/deploy.json",
+            "line": 1,
+            "type": "aws_api_gateway_method_settings",
+            "config": {
+                "tags": null,
+                "name": "Prod",
+                "settings": [
+                    {
+                        "metrics_enabled": true
+                    }
+                ]
+            },
+            "skip_rules": [
+                {
+                    "rule": "AWS.CloudFormation.Medium.0603",
+                    "comment": ""
+                }
+            ],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ],
+    "aws_api_gateway_rest_api": [
+        {
+            "id": "aws_api_gateway_rest_api.MyRestApi",
+            "name": "MyRestApi",
+            "source": "api-gateway-rest-api/deploy.yml",
+            "line": 1,
+            "type": "aws_api_gateway_rest_api",
+            "config": {
+                "tags": null,
+                "name": "MyApi",
+                "endpoint_configuration": [
+                    {
+                        "types": [
+                            "EDGE"
+                        ],
+                        "vpc_endpoint_ids": null
+                    }
+                ],
+                "minimum_compression_size": -1
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ],
+    "aws_api_gateway_stage": [
+        {
+            "id": "aws_api_gateway_stage.Prod",
+            "name": "Prod",
+            "source": "api-gateway-method-settings/deploy.yml",
+            "line": 1,
+            "type": "aws_api_gateway_stage",
+            "config": {
+                "access_log_settings": {},
+                "client_certificate_id": null,
+                "tags": null,
+                "name": "Prod",
+                "xray_tracing_enabled": false
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        },
+        {
+            "id": "aws_api_gateway_stage.Prod",
+            "name": "Prod",
+            "source": "api-gateway-stage/deploy.json",
+            "line": 1,
+            "type": "aws_api_gateway_stage",
+            "config": {
+                "access_log_settings": {},
+                "client_certificate_id": null,
+                "tags": null,
+                "name": "Prod",
+                "xray_tracing_enabled": false
+            },
+            "skip_rules": [
+                {
+                    "rule": "AWS.CloudFormation.Medium.0603",
+                    "comment": ""
+                }
+            ],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ],
+    "aws_apigatewayv2_stage": [
+        {
+            "id": "aws_apigatewayv2_stage.MyStage",
+            "name": "MyStage",
+            "source": "api-gateway-stage/deploy-1.json",
+            "line": 1,
+            "type": "aws_apigatewayv2_stage",
+            "config": {
+                "tags": null,
+                "name": "Prod"
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        },
+        {
+            "id": "aws_apigatewayv2_stage.MyStage",
+            "name": "MyStage",
+            "source": "api-gatewayv2-stage/deploy.json",
+            "line": 1,
+            "type": "aws_apigatewayv2_stage",
+            "config": {
+                "tags": null,
+                "name": "Prod",
+                "access_log_settings": {
+                    "DestinationArn": "arn:aws:logs:us-east-1:123456789:log-group:my-log-group",
+                    "Format": "{\"requestId\":\"$context.requestId\", \"ip\": \"$context.identity.sourceIp\", \"caller\":\"$context.identity.caller\", \"user\":\"$context.identity.user\",\"requestTime\":\"$context.requestTime\", \"eventType\":\"$context.eventType\",\"routeKey\":\"$context.routeKey\", \"status\":\"$context.status\",\"connectionId\":\"$context.connectionId\"}"
+                }
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}

@@ -1,0 +1,100 @@
+{
+    "aws_ecs_service": [
+        {
+            "id": "aws_ecs_service.ECSService",
+            "name": "ECSService",
+            "source": "ecs-service/deploy.json",
+            "line": 1,
+            "type": "aws_ecs_service",
+            "config": {
+                "tags": null,
+                "name": "",
+                "iam_role": "admin"
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ],
+    "aws_ecs_task_definition": [
+        {
+            "id": "aws_ecs_task_definition.taskdefinition",
+            "name": "taskdefinition",
+            "source": "ecs-service/deploy.json",
+            "line": 1,
+            "type": "aws_ecs_task_definition",
+            "config": {
+                "tags": null,
+                "name": "",
+                "container_definitions": "[]",
+                "network_mode": "",
+                "volume": []
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        },
+        {
+            "id": "aws_ecs_task_definition.taskdefinition",
+            "name": "taskdefinition",
+            "source": "ecs-task-definition/deploy.yml",
+            "line": 1,
+            "type": "aws_ecs_task_definition",
+            "config": {
+                "tags": null,
+                "name": "",
+                "container_definitions": "[{\"environment\":[{\"name\":\"PASSWORD\"}]}]",
+                "network_mode": "",
+                "volume": [
+                    {
+                        "efs_volume_configuration": {
+                            "transit_encryption": "DISABLED"
+                        }
+                    }
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ],
+    "aws_elb": [
+        {
+            "id": "aws_elb.elb",
+            "name": "elb",
+            "source": "ecs-service/deploy.json",
+            "line": 1,
+            "type": "aws_elb",
+            "config": {
+                "listener": [
+                    {
+                        "lb_protocol": "HTTP",
+                        "instance_protocol": ""
+                    }
+                ],
+                "tags": null,
+                "name": ""
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ],
+    "aws_iam_role": [
+        {
+            "id": "aws_iam_role.Role",
+            "name": "Role",
+            "source": "ecs-service/deploy.json",
+            "line": 1,
+            "type": "aws_iam_role",
+            "config": {
+                "tags": null,
+                "name": "",
+                "assume_role_policy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ecs.amazonaws.com\"},\"Sid\":\"\"}],\"Version\":\"2008-10-17\"}"
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}

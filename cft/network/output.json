@@ -1,0 +1,97 @@
+{
+    "aws_elb": [
+        {
+            "id": "aws_elb.MyLoadBalancer",
+            "name": "MyLoadBalancer",
+            "source": "elasticloadbalancing-loadbalancer/deploy.yml",
+            "line": 1,
+            "type": "aws_elb",
+            "config": {
+                "listener": [
+                    {
+                        "lb_protocol": "HTTP",
+                        "instance_protocol": "HTTP"
+                    }
+                ],
+                "tags": null,
+                "name": ""
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ],
+    "aws_lb_listener": [
+        {
+            "id": "aws_lb_listener.HTTPlistener",
+            "name": "HTTPlistener",
+            "source": "elasticloadbalancerv2-listener/deploy.yml",
+            "line": 1,
+            "type": "aws_lb_listener",
+            "config": {
+                "tags": null,
+                "name": "",
+                "protocol": "HTTP",
+                "default_action": {
+                    "redirect": {
+                        "protocol": "HTTPS"
+                    }
+                }
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ],
+    "aws_lb_target_group": [
+        {
+            "id": "aws_lb_target_group.MyTargetGroup",
+            "name": "MyTargetGroup",
+            "source": "elasticloadbalancerv2-target-group/deploy.yml",
+            "line": 1,
+            "type": "aws_lb_target_group",
+            "config": {
+                "tags": null,
+                "name": "MyTargets",
+                "protocol": "HTTP"
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ],
+    "aws_route53_record": [
+        {
+            "id": "aws_route53_record.WithViolation",
+            "name": "WithViolation",
+            "source": "route53-record/deploy.yml",
+            "line": 1,
+            "type": "aws_route53_record",
+            "config": {
+                "tags": null,
+                "name": ".us-east-1..",
+                "records": null
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        },
+        {
+            "id": "aws_route53_record.WithoutViolation",
+            "name": "WithoutViolation",
+            "source": "route53-record/deploy.yml",
+            "line": 1,
+            "type": "aws_route53_record",
+            "config": {
+                "tags": null,
+                "name": ".us-east-1..",
+                "records": [
+                    "test"
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}
