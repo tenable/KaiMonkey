@@ -3,6 +3,9 @@
   "Resources": {
     "Prod": {
       "Type": "AWS::ApiGateway::Stage",
+"Metadata":{
+            "runterrascan.io/skip": "[{\"rule\":\"AWS.CloudFormation.Medium.0603\"}]"
+        },
       "Properties": {
         "StageName": "Prod",
         "Description": "Prod Stage",
@@ -21,6 +24,7 @@
         "Variables": {
           "Stack": "Prod"
         },
+
         "MethodSettings": [
           {
             "ResourcePath": "/",

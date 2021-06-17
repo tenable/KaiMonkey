@@ -1,0 +1,84 @@
+{
+    "aws_db_instance": [
+        {
+            "id": "aws_db_instance.MyDB",
+            "name": "MyDB",
+            "source": "db-instance/deploy.yml",
+            "line": 1,
+            "type": "aws_db_instance",
+            "config": {
+                "tags": null,
+                "name": "mydb",
+                "enabled_cloudwatch_logs_exports": null,
+                "auto_minor_version_upgrade": false,
+                "ca_cert_identifier": "rds-ca-2020",
+                "storage_encrypted": false,
+                "iam_database_authentication_enabled": false,
+                "publicly_accessible": true
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ],
+    "aws_db_security_group": [
+        {
+            "id": "aws_db_security_group.MyDBSecurityGroup",
+            "name": "MyDBSecurityGroup",
+            "source": "db-security-group/deploy.json",
+            "line": 1,
+            "type": "aws_db_security_group",
+            "config": {
+                "tags": null,
+                "name": "",
+                "ingress": [
+                    {
+                        "cidr": "10.0.0.0/24"
+                    },
+                    {
+                        "cidr": "192.168.0.0/24"
+                    },
+                    {
+                        "cidr": "0.0.0.0/0"
+                    }
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ],
+    "aws_rds_cluster": [
+        {
+            "id": "aws_rds_cluster.BackupRetention",
+            "name": "BackupRetention",
+            "source": "rds-cluster/deploy.yml",
+            "line": 1,
+            "type": "aws_rds_cluster",
+            "config": {
+                "tags": null,
+                "name": "",
+                "storage_encrypted": true
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        },
+        {
+            "id": "aws_rds_cluster.NoEncryption",
+            "name": "NoEncryption",
+            "source": "rds-cluster/deploy.yml",
+            "line": 1,
+            "type": "aws_rds_cluster",
+            "config": {
+                "tags": null,
+                "name": "",
+                "backup_retention_period": 7,
+                "storage_encrypted": false
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}
