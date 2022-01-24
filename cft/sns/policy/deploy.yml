@@ -1,0 +1,20 @@
+---
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  samplesnspolicy:
+    Type: AWS::SNS::TopicPolicy
+    Properties:
+      PolicyDocument:
+        Id: samplesnspolicy
+        Version: "2012-10-17"
+        Statement:
+        - Sid: samplesnspolicy1
+          Effect: Allow
+          Principal:
+            AWS: "*"
+          Action: sns:Publish
+          Resource:
+            Ref: sometopic1
+      Topics:
+        - Ref: sometopic1
+        - Ref: sometopic2

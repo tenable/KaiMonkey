@@ -1,0 +1,19 @@
+---
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  sampleQpolicy:
+    Type: AWS::SQS::QueuePolicy
+    Properties:
+      Queues:
+        - "https://sqs:us-east-2.amazonaws.com/444455556666/queue1"
+        - "https://sqs:us-east-2.amazonaws.com/444455556666/queue2"
+      PolicyDocument:
+        Id: samplesnspolicy
+        Version: '2012-10-17'
+        Statement:
+        - Sid: szimplepolicy1
+          Action:
+            - "SQS:SendMessage"
+            - "SQS:ReceiveMessage"
+          Effect: "Allow"
+          Principal: "*"
