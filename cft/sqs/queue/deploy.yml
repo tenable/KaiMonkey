@@ -1,0 +1,13 @@
+---
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  samplequeue:
+    Type: AWS::SQS::Queue
+    Properties:
+      MessageRetentionPeriod: 1500
+      RedrivePolicy:
+        deadLetterTargetArn:
+          Fn::GetAtt:
+            - "MyDeadLetterQueue"
+            - "Arn"
+        maxReceiveCount: 5
