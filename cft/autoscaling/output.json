@@ -1,0 +1,37 @@
+{
+    "aws_launch_configuration": [
+        {
+            "id": "aws_launch_configuration.myLaunchConfig",
+            "name": "myLaunchConfig",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_launch_configuration",
+            "config": {
+                "tags": null,
+                "name": "",
+                "enable_monitoring": false,
+                "user_data_base64": "aHR0cHM6Ly9zZWN1cmUud2Vic2l0ZS5jb20=",
+                "user_data": "",
+                "metadata_options": {
+                    "http_endpoint": "enabled",
+                    "http_tokens": "required"
+                },
+                "ebs_block_device": [
+                    {
+                        "device_name": "/dev/sda1",
+                        "encrypted": true,
+                        "delete_on_termination": false
+                    },
+                    {
+                        "device_name": "/dev/sdm",
+                        "encrypted": false,
+                        "delete_on_termination": false
+                    }
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}
