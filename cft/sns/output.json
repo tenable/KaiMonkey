@@ -1,0 +1,53 @@
+{
+    "aws_sns_topic": [
+        {
+            "id": "aws_sns_topic.MySNSTopic",
+            "name": "MySNSTopic",
+            "source": "common.yml",
+            "line": 1,
+            "type": "aws_sns_topic",
+            "config": {
+                "tags": null,
+                "name": "SampleTopic",
+                "kms_master_id": ""
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ],
+    "aws_sns_topic_policy": [
+        {
+            "id": "aws_sns_topic_policy.samplesnspolicy",
+            "name": "samplesnspolicy",
+            "source": "common.yml",
+            "line": 1,
+            "type": "aws_sns_topic_policy",
+            "config": {
+                "tags": null,
+                "name": "",
+                "arn": "",
+                "policy": "{\"Id\":\"samplesnspolicy\",\"Statement\":[{\"Action\":\"sns:Publish\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Resource\":null,\"Sid\":\"samplesnspolicy1\"}],\"Version\":\"2012-10-17\"}"
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        },
+        {
+            "id": "aws_sns_topic_policy.samplesnspolicy",
+            "name": "samplesnspolicy",
+            "source": "common.yml",
+            "line": 1,
+            "type": "aws_sns_topic_policy",
+            "config": {
+                "tags": null,
+                "name": "",
+                "arn": "",
+                "policy": "{\"Id\":\"samplesnspolicy\",\"Statement\":[{\"Action\":\"sns:Publish\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Resource\":null,\"Sid\":\"samplesnspolicy1\"}],\"Version\":\"2012-10-17\"}"
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}
