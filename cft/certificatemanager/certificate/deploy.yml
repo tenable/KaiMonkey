@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  cert:
+    Type: AWS::CertificateManager::Certificate
+    Properties:
+      DomainName: "*.abc.com"
+      ValidationMethod: EMAIL
+      Tags:
+        - Key: key1
+          Value: value1
+        - Key: key2
+          Value: value2

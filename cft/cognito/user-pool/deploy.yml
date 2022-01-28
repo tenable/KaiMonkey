@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  pool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: pool1
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 10
+          RequireLowercase: false
+          RequireUppercase: true
+          RequireNumbers: false
+          RequireSymbols: true
+          TemporaryPasswordValidityDays: 10
