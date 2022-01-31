@@ -1,0 +1,29 @@
+{
+    "aws_acm_certificate": [
+        {
+            "id": "aws_acm_certificate.cert",
+            "name": "cert",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_acm_certificate",
+            "config": {
+                "tags": [
+                    {
+                        "Key": "key1",
+                        "Value": "value1"
+                    },
+                    {
+                        "Key": "key2",
+                        "Value": "value2"
+                    }
+                ],
+                "name": "",
+                "domain_name": "*.abc.com",
+                "validation_method": "EMAIL"
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}

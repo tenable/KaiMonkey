@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  myinstance:
+    Type: "AWS::EC2::Instance"
+    Properties:
+      ImageId: instanceid
+      InstanceType: m4.large
+      EBSOptimized: false
+      HibernationOptions:
+        Configured: false
+      Monitoring: false
+      NetworkInterfaces:
+        - NetworkInterfaceId: nic1
+          DeviceIndex: 1
+          DeleteOnTermination: false
+          AssociatePublicIpAddress: false
+        - NetworkInterfaceId: nic2
+          DeviceIndex: 2
+          DeleteOnTermination: true
+          AssociatePublicIpAddress: true
+      Tags:
+        - Key: key1
+          Value: value1
+        - Key: key2
+          Value: value2

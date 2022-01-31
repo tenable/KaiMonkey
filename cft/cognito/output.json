@@ -1,0 +1,28 @@
+{
+    "aws_cognito_user_pool": [
+        {
+            "id": "aws_cognito_user_pool.pool",
+            "name": "pool",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_cognito_user_pool",
+            "config": {
+                "tags": null,
+                "name": "pool1",
+                "password_policy": [
+                    {
+                        "minimum_length": 10,
+                        "require_lowercase": false,
+                        "require_uppercase": true,
+                        "require_numbers": false,
+                        "require_symbols": true,
+                        "temporary_password_validity_days": 10
+                    }
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}
