@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  muskluster:
+    Type: AWS::MSK::Cluster
+    Properties:
+      ClusterName: somename
+      KafkaVersion: someversion
+      NumberOfBrokerNodes: 2
+      BrokerNodeGroupInfo:
+        InstanceType: m4.large
+        StorageInfo:
+          EBSStorageInfo:
+            VolumeSize: 10
+        ClientSubnets:
+          - sub1
+          - sub2
+        SecurityGroups:
+          - sg1
+          - sg2
+      EncryptionInfo:
+        EncryptionInTransit:
+          ClientBroker: somebroker
+          InCluster: false
