@@ -25,3 +25,5 @@ Resources:
         Attributes:
         - Name: Reference-Security-Policy
           Value: ELBSecurityPolicy-TLS-1-2-2017-01
+        - Name: Policy-2
+          Value: ELBS-2

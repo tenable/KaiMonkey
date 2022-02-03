@@ -1,0 +1,52 @@
+{
+    "aws_codebuild_project": [
+        {
+            "id": "aws_codebuild_project.somecode",
+            "name": "somecode",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_codebuild_project",
+            "config": {
+                "tags": null,
+                "name": "somecodename",
+                "description": "somecodedesc",
+                "build_timeout": 10,
+                "queued_timeout": 10,
+                "service_role": "someservicerole",
+                "encryption_key": "somekey",
+                "artifacts": [
+                    {
+                        "type": "someartifact"
+                    }
+                ],
+                "cache": [
+                    {
+                        "type": "somecache",
+                        "modes": [
+                            "mode1",
+                            "mode2"
+                        ]
+                    }
+                ],
+                "environment": [
+                    {
+                        "compute_type": "somecomputetype",
+                        "image": "someimage",
+                        "type": "someenv",
+                        "image_pull_credentials_type": "somepulltype"
+                    }
+                ],
+                "source": [
+                    {
+                        "type": "somesource",
+                        "location": "somelocation",
+                        "git_clone_depth": 1
+                    }
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}

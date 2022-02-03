@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  replicator:
+    Type: AWS::DMS::ReplicationInstance
+    Properties:
+      AllocatedStorage: 20
+      AutoMinorVersionUpgrade: false
+      AvailabilityZone: us-west-2c
+      EngineVersion: "3.1.4"
+      KmsKeyId: somekms
+      MultiAZ: false
+      PreferredMaintenanceWindow: "sun:10:30-sun:14:30"
+      PubliclyAccessible: true
+      ReplicationInstanceClass: dms.t2.micro
+      ReplicationInstanceIdentifier: test-dms-id
+      ReplicationSubnetGroupIdentifier: subnet-id
+      VpcSecurityGroupIds:
+        - sg1
+        - sg2
+      Tags:
+        - Key: key1
+          Value: value1
+        - Key: key2
+          Value: value2

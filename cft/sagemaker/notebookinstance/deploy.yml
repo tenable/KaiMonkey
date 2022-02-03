@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  mysage:
+    Type: AWS::SageMaker::NotebookInstance
+    Properties:
+      NotebookInstanceName: somenotebook
+      RoleARN: somerole
+      InstanceType: m4.large
+      KmsKeyId: somekey
+      DirectInternetAccess: Enabled
+      RootAccess: Enabled
+

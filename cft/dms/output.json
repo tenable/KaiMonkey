@@ -1,0 +1,42 @@
+{
+    "aws_dms_replication_instance": [
+        {
+            "id": "aws_dms_replication_instance.replicator",
+            "name": "replicator",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_dms_replication_instance",
+            "config": {
+                "tags": [
+                    {
+                        "Key": "key1",
+                        "Value": "value1"
+                    },
+                    {
+                        "Key": "key2",
+                        "Value": "value2"
+                    }
+                ],
+                "name": "",
+                "allocated_storage": 20,
+                "AutoMinorVersionUpgrade": false,
+                "availability_zone": "us-west-2c",
+                "engine_version": "3.1.4",
+                "kms_key_arn": "somekms",
+                "multi_az": false,
+                "preferred_maintenance_window": "sun:10:30-sun:14:30",
+                "publicly_accessible": true,
+                "replication_instance_class": "dms.t2.micro",
+                "replication_instance_id": "test-dms-id",
+                "replication_subnet_group_id": "subnet-id",
+                "vpc_security_group_ids": [
+                    "sg1",
+                    "sg2"
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}

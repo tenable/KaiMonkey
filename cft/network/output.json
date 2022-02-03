@@ -21,6 +21,35 @@
             "min_severity": ""
         }
     ],
+    "aws_load_balancer_policy": [
+        {
+            "id": "aws_load_balancer_policy.MyLoadBalancer0",
+            "name": "MyLoadBalancer0",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_load_balancer_policy",
+            "config": {
+                "tags": null,
+                "name": "",
+                "load_balancer_name": "MyLoadBalancer0",
+                "policy_name": "My-SSLNegotiation-Policy",
+                "PolicyTypeName": "SSLNegotiationPolicyType",
+                "policy_attribute": [
+                    {
+                        "name": "Reference-Security-Policy",
+                        "value": "ELBSecurityPolicy-TLS-1-2-2017-01"
+                    },
+                    {
+                        "name": "Policy-2",
+                        "value": "ELBS-2"
+                    }
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ],
     "aws_lb_listener": [
         {
             "id": "aws_lb_listener.HTTPlistener",
