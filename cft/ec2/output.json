@@ -295,5 +295,25 @@
             "max_severity": "",
             "min_severity": ""
         }
+    ],
+    "aws_vpc": [
+        {
+            "id": "aws_vpc.vipc",
+            "name": "vipc",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_vpc",
+            "config": {
+                "tags": null,
+                "name": "",
+                "cidr_block": "10.0.0.0/16",
+                "enable_dns_support": false,
+                "enable_dns_hostnames": false,
+                "instance_tenancy": "default"
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
     ]
 }

@@ -1,0 +1,26 @@
+{
+    "aws_eks_cluster": [
+        {
+            "id": "aws_eks_cluster.ekluster",
+            "name": "ekluster",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_eks_cluster",
+            "config": {
+                "tags": null,
+                "name": "somekluster",
+                "role_arn": "somearn",
+                "vpc_config": null,
+                "enabled_cluster_log_types": [
+                    "type1",
+                    "type2",
+                    "type3",
+                    "type4"
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}

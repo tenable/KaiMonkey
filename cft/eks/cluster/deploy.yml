@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  ekluster:
+    Type: AWS::EKS::Cluster
+    Properties:
+      Name: somekluster
+      RoleArn: somearn
+      ResourcesVpcConfig:
+        SubnetIds:
+          - sub1
+          - sub2
+        SecurityGroupIds:
+          - sg1
+          - sg2
+        EndpointPrivateAccess: false
+        EndpointPublicAccess: true
+      Logging:
+        ClusterLogging:
+          EnabledTypes:
+            - Type: type1
+            - Type: type2
+            - Type: type3
+            - Type: type4
