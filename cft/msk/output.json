@@ -28,6 +28,7 @@
                 ],
                 "encryption_info": [
                     {
+                        "encryption_at_rest_kms_key_arn": "",
                         "encryption_in_transit": [
                             {
                                 "client_broker": "somebroker",
