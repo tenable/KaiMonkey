@@ -1,0 +1,23 @@
+{
+    "aws_ecr_repository": [
+        {
+            "id": "aws_ecr_repository.ecrepo",
+            "name": "ecrepo",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_ecr_repository",
+            "config": {
+                "tags": null,
+                "name": "",
+                "image_scanning_configuration": [
+                    {
+                        "scan_on_push": false
+                    }
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}
