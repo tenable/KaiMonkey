@@ -1,0 +1,19 @@
+{
+    "aws_backup_vault": [
+        {
+            "id": "aws_backup_vault.vaultz",
+            "name": "vaultz",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_backup_vault",
+            "config": {
+                "tags": null,
+                "name": "somevaultz",
+                "KMSKeyARN": ""
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}

@@ -22,5 +22,36 @@
             "max_severity": "",
             "min_severity": ""
         }
+    ],
+    "aws_eks_node_group": [
+        {
+            "id": "aws_eks_node_group.noodlegroup",
+            "name": "noodlegroup",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_eks_node_group",
+            "config": {
+                "tags": null,
+                "name": "noodlroup",
+                "cluster_name": "noodluster",
+                "node_group_name": "noodlroup",
+                "subnet_ids": [
+                    "sub1",
+                    "sub2"
+                ],
+                "node_role_arn": "noodlrole",
+                "scaling_config": [
+                    {
+                        "desired_size": 1,
+                        "max_size": 1,
+                        "min_size": 1
+                    }
+                ],
+                "labels": null
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
     ]
 }

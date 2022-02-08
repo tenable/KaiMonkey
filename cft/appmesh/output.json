@@ -1,0 +1,27 @@
+{
+    "aws_appmesh_mesh": [
+        {
+            "id": "aws_appmesh_mesh.amesh",
+            "name": "amesh",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_appmesh_mesh",
+            "config": {
+                "tags": null,
+                "name": "meshname",
+                "spec": [
+                    {
+                        "egress_filter": [
+                            {
+                                "type": "ALLOW_ALL"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}

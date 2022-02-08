@@ -1,0 +1,30 @@
+{
+    "aws_redshift_parameter_group": [
+        {
+            "id": "aws_redshift_parameter_group.paragroup",
+            "name": "paragroup",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_redshift_parameter_group",
+            "config": {
+                "tags": null,
+                "name": "paragroup",
+                "description": "some param group",
+                "family": "somefam",
+                "parameter": [
+                    {
+                        "name": "pmname1",
+                        "value": "pmvalue1"
+                    },
+                    {
+                        "name": "pmname2",
+                        "value": "pmvalue2"
+                    }
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}
