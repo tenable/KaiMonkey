@@ -148,7 +148,8 @@
                         "vpc_endpoint_ids": null
                     }
                 ],
-                "minimum_compression_size": -1
+                "minimum_compression_size": -1,
+                "policy": "{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n                    {\n                        \"Effect\": \"Allow\",\n                        \"Principal\": {\n                            \"AWS\": \"*\"\n                          },\n                        \"Action\": \"execute-api:Invoke\",\n                        \"Resource\": \"${aws_api_gateway_rest_api.test.execution_arn}\",\n                        \"Condition\": {\n                            \"IpAddress\": {\n                                \"aws:SourceIp\": \"123.123.123.123/32\"\n                              }\n                      }\n                    }\n                  ]\n  }"
             },
             "skip_rules": [],
             "max_severity": "",
