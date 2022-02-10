@@ -1,0 +1,41 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Creating ECS Cluster",
+    "Resources": {
+        "SampleEcsCluster": {
+            "Type" : "AWS::ECS::Cluster",
+            "Properties" : {
+                "ClusterName" : "sampleEcsCluster",
+                "ClusterSettings" : [ 
+                    {
+                        "Name" : "containerInsights",
+                        "Value" : "disabled"
+                    }
+                ],
+                "Configuration" : {
+                    "ExecuteCommandConfiguration" : 
+                    {
+                        "KmsKeyId" : "sample-kms-key",
+                        "LogConfiguration" : 
+                        {
+                            "CloudWatchEncryptionEnabled" : false,
+                            "CloudWatchLogGroupName" : "sampleCWConfig",
+                            "S3BucketName" : "sampleS3Bucket",
+                            "S3EncryptionEnabled" : false,
+                            "S3KeyPrefix" : "sampleS3KeyPrefix"
+                        },
+                        "Logging" : "NONE"
+                    }
+                },
+                "DefaultCapacityProviderStrategy" : [ 
+                    {
+                        "Base" : 72,
+                        "CapacityProvider" : "capacityProvider1",
+                        "Weight" : 77
+                    }
+                ],
+                "Tags": [ {"Key": "env", "Value": "test"} ]
+              }
+        }
+    }
+}

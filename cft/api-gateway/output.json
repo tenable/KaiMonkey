@@ -229,5 +229,52 @@
             "max_severity": "",
             "min_severity": ""
         }
+    ],
+    "aws_apigatewayv2_api": [
+        {
+          "id": "aws_apigatewayv2_api.MyApi",
+          "name": "MyApi",
+          "source": "deploy.json",
+          "line": 1,
+          "type": "aws_apigatewayv2_api",
+          "config": {
+            "tags": [
+              {
+                "Key": "env",
+                "Value": "test"
+              }
+            ],
+            "name": "sampleApiGatewayV2",
+            "protocol_type": "HTTP",
+            "route_key": "sample-route-key",
+            "description": "description value",
+            "credentials_arn": "sample-credientials-arn",
+            "route_selection_expression": "$request.method $request.path",
+            "target": "valid-target",
+            "version": "v1.0.0",
+            "api_key_selection_expression": "$request.header.x-api-key",
+            "cors_configuration": [
+              {
+                "allow_credentials": true,
+                "max_age": 18,
+                "ExposeHeaders": [
+                  "sample-exopse-header"
+                ],
+                "allow_origins": [
+                  "sample-allow"
+                ],
+                "allow_methods": [
+                  "sample-allow-methods"
+                ],
+                "allow_headers": [
+                  "sample-allow-header"
+                ]
+              }
+            ]
+          },
+          "skip_rules": [],
+          "max_severity": "",
+          "min_severity": ""
+        }
     ]
 }
