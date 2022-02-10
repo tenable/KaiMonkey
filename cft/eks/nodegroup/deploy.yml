@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  noodlegroup:
+    Type: AWS::EKS::Nodegroup
+    Properties:
+      ClusterName: noodluster
+      NodegroupName: noodlroup
+      NodeRole: noodlrole
+      ScalingConfig:
+        DesiredSize: 1
+        MaxSize: 1
+        MinSize: 1
+      Subnets:
+        - sub1
+        - sub2

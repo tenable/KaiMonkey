@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  mymodel:
+    Type: AWS::SageMaker::Model
+    Properties:
+      ModelName: somemodel
+      ExecutionRoleArn: somarn
+      Containers:
+        - Image: someimage1
+          Mode: somemode1
+          ModelDataUrl: someurl1
+          ContainerHostname: somename1
+          ImageConfig:
+            RepositoryAccessMode: VPC
+      PrimaryContainer:
+        Image: someimage
+        Mode: somemode
+        ModelDataUrl: someurl
+        ContainerHostname: somename
+        ImageConfig:
+            RepositoryAccessMode: VPC
