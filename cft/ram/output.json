@@ -1,0 +1,19 @@
+{
+    "aws_ram_resource_share": [
+        {
+            "id": "aws_ram_resource_share.ramy",
+            "name": "ramy",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_ram_resource_share",
+            "config": {
+                "tags": null,
+                "name": "ramyRam",
+                "allow_external_principals": false
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}

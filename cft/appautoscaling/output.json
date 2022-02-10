@@ -1,0 +1,22 @@
+{
+    "aws_appautoscaling_policy": [
+        {
+            "id": "aws_appautoscaling_policy.scalerpolicy",
+            "name": "scalerpolicy",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_appautoscaling_policy",
+            "config": {
+                "tags": null,
+                "name": "scalername",
+                "policy_type": "TargetTrackingScaling",
+                "resource_id": "",
+                "scalable_dimension": "dynamodb:table:ReadCapacityUnits",
+                "service_namespace": "dynamodb"
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}

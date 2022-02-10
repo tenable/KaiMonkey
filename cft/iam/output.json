@@ -1,4 +1,20 @@
 {
+    "aws_iam_group": [
+        {
+            "id": "aws_iam_group.group",
+            "name": "group",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_iam_group",
+            "config": {
+                "tags": null,
+                "name": "somegroup"
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ],
     "aws_iam_group_policy": [
         {
             "id": "aws_iam_group_policy.root0",
