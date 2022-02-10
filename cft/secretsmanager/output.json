@@ -50,5 +50,28 @@
             "max_severity": "",
             "min_severity": ""
         }
+    ],
+    "aws_secretsmanager_secret_rotation": [
+        {
+            "id": "aws_secretsmanager_secret_rotation.rotator",
+            "name": "rotator",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_secretsmanager_secret_rotation",
+            "config": {
+                "tags": null,
+                "name": "",
+                "secret_id": "somesecret",
+                "rotation_lambda_arn": "lambdarn",
+                "rotation_rules": [
+                    {
+                        "automatically_after_days": 500
+                    }
+                ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
     ]
 }
