@@ -1,0 +1,41 @@
+{
+    "aws_waf_size_constraint_set": [
+      {
+        "id": "aws_waf_size_constraint_set.SampleWafConstraintSet",
+        "name": "SampleWafConstraintSet",
+        "source": "deploy.json",
+        "line": 1,
+        "type": "aws_waf_size_constraint_set",
+        "config": {
+          "tags": null,
+          "name": "sampleWafConstraintSet",
+          "size_constraints": [
+            {
+              "comparison_operator": "EQ",
+              "size": 4096,
+              "text_transformation": "NONE",
+              "field_to_match": [
+                {
+                  "type": "Body"
+                }
+              ]
+            },
+            {
+              "comparison_operator": "GTE",
+              "size": 4096,
+              "text_transformation": "NONE",
+              "field_to_match": [
+                {
+                  "data": "User-Agent",
+                  "type": "Body"
+                }
+              ]
+            }
+          ]
+        },
+        "skip_rules": [],
+        "max_severity": "",
+        "min_severity": ""
+      }
+    ]
+}

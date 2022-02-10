@@ -96,5 +96,58 @@
             "max_severity": "",
             "min_severity": ""
         }
+    ],
+    "aws_ecs_cluster": [
+        {
+            "id": "aws_ecs_cluster.SampleEcsCluster",
+            "name": "SampleEcsCluster",
+            "source": "deploy.json",
+            "line": 1,
+            "type": "aws_ecs_cluster",
+            "config": {
+              "tags": [
+                {
+                  "Key": "env",
+                  "Value": "test"
+                }
+              ],
+              "name": "sampleEcsCluster",
+              "settings": [
+                {
+                  "name": "containerInsights",
+                  "value": "disabled"
+                }
+              ],
+              "default_capacity_provider_strategy": [
+                {
+                  "base": 72,
+                  "capacity_provider": "capacityProvider1",
+                  "weight": 77
+                }
+              ],
+              "configuration": [
+                {
+                  "execute_command_configuration": [
+                    {
+                      "kms_key_id": "sample-kms-key",
+                      "logging": "NONE",
+                      "log_configuration": [
+                        {
+                          "cloud_watch_encryption_enabled": false,
+                          "cloud_watch_log_group_name": "sampleCWConfig",
+                          "s3_bucket_name": "sampleS3Bucket",
+                          "s3_bucket_encryption_enabled": false,
+                          "s3_key_prefix": "sampleS3KeyPrefix"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
     ]
 }

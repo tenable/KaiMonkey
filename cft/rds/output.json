@@ -80,5 +80,40 @@
             "max_severity": "",
             "min_severity": ""
         }
+    ],
+    "aws_db_event_subscription": [
+      {
+            "id": "aws_db_event_subscription.MyDBEventSubscription",
+            "name": "MyDBEventSubscription",
+            "source": "deploy.json",
+            "line": 1,
+            "type": "aws_db_event_subscription",
+            "config": {
+              "tags": null,
+              "name": "",
+              "sns_topic": "${aws_sns_topic.default.arn}",
+              "enabled": true,
+              "event_categories": [
+                "availability",
+                "deletion",
+                "failover",
+                "failure",
+                "low storage",
+                "maintenance",
+                "notification",
+                "read replica",
+                "recovery",
+                "restoration"
+              ],
+              "source_ids": [
+                "aws_db_instance.default",
+                "aws_db_instance.default2"
+              ],
+              "source_type": "db-instance"
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
     ]
 }

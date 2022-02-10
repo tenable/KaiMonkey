@@ -1,0 +1,25 @@
+{
+    "aws_qldb_ledger": [
+      {
+        "id": "aws_qldb_ledger.SampleQldbLedger",
+        "name": "SampleQldbLedger",
+        "source": "deploy.json",
+        "line": 1,
+        "type": "aws_qldb_ledger",
+        "config": {
+          "tags": [
+            {
+              "Key": "env",
+              "Value": "test"
+            }
+          ],
+          "name": "sampleQldbLedger",
+          "permissions_mode": "ALLOW_ALL",
+          "deletion_protection": false
+        },
+        "skip_rules": [],
+        "max_severity": "",
+        "min_severity": ""
+      }
+    ]
+}

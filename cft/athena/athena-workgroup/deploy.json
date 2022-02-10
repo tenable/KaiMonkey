@@ -1,0 +1,29 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Creating Athena Workgroup service",
+  "Resources": {
+    "AthenaWorkGroup": {
+      "Type": "AWS::Athena::WorkGroup",
+      "Properties" : {
+        "Name" : "Sample Athena",
+        "WorkGroupConfiguration" : {
+            "BytesScannedCutoffPerQuery" : 1234,
+            "EnforceWorkGroupConfiguration" : false,
+            "EngineVersion" : {
+              "SelectedEngineVersion" : "AUTO"
+            },
+            "PublishCloudWatchMetricsEnabled" : false,
+            "RequesterPaysEnabled" : false,
+            "ResultConfiguration" : {
+              "EncryptionConfiguration" : {
+                "EncryptionOption" : "SSE_KMS",
+                "KmsKey" : "<sample_kms_key_id>"
+              },
+              "OutputLocation" : "s3://path/to/query/bucket/"
+            }
+        }
+      }
+    }
+  }
+  
+}

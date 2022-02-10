@@ -1,0 +1,42 @@
+{
+    "aws_athena_workgroup": [
+      {
+        "id": "aws_athena_workgroup.AthenaWorkGroup",
+        "name": "AthenaWorkGroup",
+        "source": "deploy.json",
+        "line": 1,
+        "type": "aws_athena_workgroup",
+        "config": {
+          "tags": null,
+          "name": "Sample Athena",
+          "configuration": [
+            {
+              "bytes_scanned_cutoff_per_query": 1234,
+              "enforce_workgroup_configuration": false,
+              "requester_pays_enabled": false,
+              "publish_cloudwatch_metrics_enabled": false,
+              "engine_version": [
+                {
+                  "selected_version": "AUTO"
+                }
+              ],
+              "result_configuration": [
+                {
+                  "encryption_configuration": [
+                    {
+                      "encryption_option": "SSE_KMS",
+                      "kms_key_arn": "\u003csample_kms_key_id\u003e"
+                    }
+                  ],
+                  "output_location": "s3://path/to/query/bucket/"
+                }
+              ]
+            }
+          ]
+        },
+        "skip_rules": [],
+        "max_severity": "",
+        "min_severity": ""
+      }
+    ]
+  }
