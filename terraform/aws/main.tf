@@ -3,6 +3,7 @@ provider "aws" {
   version = "~> 3.11"
 }
 
+
 module "network" {
   source       = "./modules/network"
   environment  = var.environment
