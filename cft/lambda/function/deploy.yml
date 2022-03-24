@@ -6,7 +6,9 @@ Resources:
       KmsKeyArn: somekeyarn
       FunctionName: funyun
       Code:
-        ZipFile: somecode.zip
+        S3Bucket: bucket1
+        S3Key: key1
+        S3ObjectVersion: version1
       Role: somerole
       Handler: somehandle
       MemorySize: 128
