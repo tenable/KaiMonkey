@@ -1,0 +1,53 @@
+{
+    "aws_lambda_function": [
+        {
+            "id": "aws_lambda_function.serverless",
+            "name": "serverless",
+            "source": "deploy.yml",
+            "line": 1,
+            "type": "aws_lambda_function",
+            "config": {
+                "tags": null,
+                "name": "serverlessfun",
+                "filename": "somefile.zip",
+                "function_name": "serverlessfun",
+                "role": "somerole",
+                "handler": "somehandle",
+                "memory_size": 128,
+                "reserved_concurrent_executions": -1,
+                "runtime": "python",
+                "timeout": 30,
+                "tracing_config": [
+                    {
+                        "mode": "Passive"
+                    }
+                ],
+                "vpc_config": [
+                    {
+                        "security_group_ids": [
+                            "sg1",
+                            "sg2",
+                            "sg3"
+                        ],
+                        "subnet_ids": [
+                            "subnet1",
+                            "subnet2"
+                        ]
+                    }
+                ],
+                "environment": [
+                    {
+                        "variables": {
+                            "leo": "vinci",
+                            "mona": "lisa"
+                        }
+                    }
+                ],
+                "kms_key_arn": ""
+            },
+            "skip_rules": [],
+            "max_severity": "",
+            "min_severity": ""
+        }
+    ]
+}

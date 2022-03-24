@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  serverless:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: serverlessfun
+      CodeUri: somefile.zip
+      Role: somerole
+      Handler: somehandle
+      MemorySize: 128
+      ReservedConcurrentExecutions: -1
+      Runtime: python
+      Timeout: 30
+      Tracing: Passive
+      VpcConfig:
+        SecurityGroupIds:
+          - sg1
+          - sg2
+          - sg3
+        SubnetIds:
+          - subnet1
+          - subnet2
+      Environment:
+        Variables:
+          mona: lisa
+          leo: vinci
