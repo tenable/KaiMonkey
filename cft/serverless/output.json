@@ -1,18 +1,16 @@
 {
     "aws_lambda_function": [
         {
-            "id": "aws_lambda_function.fun",
-            "name": "fun",
+            "id": "aws_lambda_function.serverless",
+            "name": "serverless",
             "source": "deploy.yml",
             "line": 1,
             "type": "aws_lambda_function",
             "config": {
                 "tags": null,
-                "name": "funyun",
-                "s3_bucket": "bucket1",
-                "s3_key": "key1",
-                "s3_object_version": "version1",
-                "function_name": "funyun",
+                "name": "serverlessfun",
+                "filename": "somefile.zip",
+                "function_name": "serverlessfun",
                 "role": "somerole",
                 "handler": "somehandle",
                 "memory_size": 128,
@@ -45,7 +43,7 @@
                         }
                     }
                 ],
-                "kms_key_arn": "somekeyarn"
+                "kms_key_arn": ""
             },
             "skip_rules": [],
             "max_severity": "",
