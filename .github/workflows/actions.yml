@@ -5,7 +5,7 @@ on:
   workflow_dispatch :
 env :
   API_URL : "https://int.api.zscwp.io"
-  AUTH_URL : "https://zscaler-poc.us.auth0.com"
+  AUTH_URL : "https://z-cwp-int.us.auth0.com"
   CLI_VERSION : "855608f"
 jobs:
   test:
