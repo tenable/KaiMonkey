@@ -11,9 +11,9 @@ jobs:
       - uses : ZscalerCWP/Zscaler-IaC-Action@main
         id : iac-scan
         with:
-          GITHUB_TOKEN: ${{secrets.REPO_TOKEN}}
-          client_id : ${{ secrets.ZSCANNER_CLIENT_ID }}
-          client_secret : ${{ secrets.ZSCANNER_CLIENT_SECRET }}
+          GITHUB_TOKEN: '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'
+          client_id : 'XLIjjL4bDdkj6KdyGDlYxQU2RD17nPsZ '
+          client_secret : '3FoJFRhLcPZVXmr-9o5zx1NBp7WA0nt2Lv61qEaZQZw0NgM6VWwI43-rEbV9raUl'
           fail_build : 'true'
           output_format : 'human+github-sarif'
           region : 'US'
