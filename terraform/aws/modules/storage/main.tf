@@ -107,9 +107,6 @@ resource "aws_s3_bucket" "km_blob_storage" {
   tags = merge(var.default_tags, {
     name = "km_blob_storage_${var.environment}"
   })
-  versioning {
-    enabled    = true
-  }
 }
 
 resource "aws_s3_bucket" "km_public_blob" {
