@@ -16,7 +16,6 @@ jobs:
           fail_build : 'true'
           output_format : 'human+github-sarif'
           region : 'US'
-          log_level : 'debug'
       - run : echo ${{ steps.iac-scan.outputs.sarif_file_path }}
       - name: Upload SARIF file
         if: ${{ success() || failure() && (steps.iac-scan.outputs.sarif_file_path != '') }}
