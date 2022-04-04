@@ -3,9 +3,12 @@ on:
   pull_request:
     types: [opened]
   workflow_dispatch :
+env :
+  API_URL : "https://main.dev.api.zscwp.io"
+  AUTH_URL : "https://zscaler-poc.us.auth0.com"
 jobs:
   test:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses : ZscalerCWP/Zscaler-IaC-Action@main
@@ -16,8 +19,7 @@ jobs:
           client_secret : '3FoJFRhLcPZVXmr-9o5zx1NBp7WA0nt2Lv61qEaZQZw0NgM6VWwI43-rEbV9raUl'
           fail_build : 'true'
           output_format : 'human+github-sarif'
-          region : 'US'
-          log_level : 'debug'
+          region : 'CUSTOM'
       - run : echo ${{ steps.iac-scan.outputs.sarif_file_path }}
       - name: Upload SARIF file
         if: ${{ success() || failure() && (steps.iac-scan.outputs.sarif_file_path != '') }}
