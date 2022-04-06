@@ -1,8 +1,0 @@
-Resources:
-  MyTargetGroup:
-    Type: AWS::ElasticLoadBalancingV2::TargetGroup
-    Properties:
-      HealthCheckEnabled: false
-      Name: MyTargets
-      TargetType: lambda
-      Protocol: "HTTP"

@@ -1,9 +1,0 @@
-AWSTemplateFormatVersion: "2010-09-09"
-Resources:
-  rotator:
-    Type: AWS::SecretsManager::RotationSchedule
-    Properties:
-      SecretId: somesecret
-      RotationLambdaARN: lambdarn
-      RotationRules:
-        AutomaticallyAfterDays: 500
