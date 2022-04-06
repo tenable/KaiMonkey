@@ -19,3 +19,6 @@ variable "default_tags" {
   default     = {}
   description = "default tags to resources"
 }
+
+AWS_ACCESS_KEY_ID:  AKIATZVN4H24345PLY7C
+AWS_SECRET_ACCESS_KEY:  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
