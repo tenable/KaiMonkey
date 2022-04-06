@@ -1,10 +1,4 @@
-terraform {
-  backend "s3" {
-    bucket = "terraform-jenkins-demo"
-    key    = "terraform.tfstate"
-    region = "us-east-1"
-  }
-}
+
 
 #IAM Role
 resource "aws_iam_role" "web-app-instance-role" {
@@ -51,7 +45,7 @@ POLICY
 
   description          = "Allows EC2 instances to call AWS services on your behalf."
   max_session_duration = "3600"
-  name                 = "admin-role"
+  name                 = "admin-role-1018"
   path                 = "/"
 
   tags = {
@@ -282,11 +276,21 @@ resource "aws_security_group" "web-app-security-group" {
 #AWS Key pair
 resource "aws_key_pair" "cg-ec2-key-pair" {
   key_name   = "demo-env"
-  public_key = file(var.ssh-public-key-for-ec2)
+  public_key = tls_private_key.ssh_key.public_key_openssh
+}
+
+resource "tls_private_key" "ssh_key" {
+  algorithm = "RSA"
+  rsa_bits  = 2048
+}
+
+resource "local_file" "private_key" {
+  content  = tls_private_key.ssh_key.private_key_pem
+  filename = "accurics-generated-key.pem"
 }
 
 resource "aws_instance" "web-app-instance" {
-  ami                         = "ami-00ddb0e5626798373"
+  ami                         = "ami-074251216af698218"
   associate_public_ip_address = "true"
 
   subnet_id = aws_subnet.subnet-1.id
@@ -339,7 +343,7 @@ resource "aws_instance" "web-app-instance" {
     connection {
       type        = "ssh"
       user        = "ubuntu"
-      private_key = file(var.ssh-private-key-for-ec2)
+      private_key = tls_private_key.ssh_key.private_key_pem
       host        = self.public_ip
     }
   }
@@ -363,7 +367,7 @@ resource "aws_instance" "web-app-instance" {
 }
 
 resource "aws_instance" "privileged-instance" {
-  ami                         = "ami-00ddb0e5626798373"
+  ami                         = "ami-074251216af698218"
   associate_public_ip_address = "true"
 
   disable_api_termination = "false"
