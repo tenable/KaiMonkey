@@ -5,6 +5,6 @@ db_password = "kHJ!4dusp7A#Xf21URhhZ1#"
 
 default_tags = {
   project : "kai-monkey",
-  createdBy : "accurics"
+  createdBy : "tenable"
   environment : "development"
 }
