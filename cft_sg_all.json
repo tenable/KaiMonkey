@@ -1,0 +1,190 @@
+{
+"Resources":{
+     "S3Bucket":{
+       "Type": "AWS::S3::Bucket",
+       "Properties":{
+         "AccessControl": "PublicRead",
+         "VersioningConfiguration":{
+           "Status": "Suspended"
+         },
+         "WebsiteConfiguration":{
+           "IndexDocument": "index.html",
+           "ErrorDocument": "error.html"
+      },
+         "PublicAccessBlockConfiguration": {
+           "BlockPublicAcls": false,
+           "BlockPublicPolicy": false,
+           "IgnorePublicAcls": false,
+           "RestrictPublicBuckets": false
+          }
+    }
+    },
+     "InstanceSecurityGroup" : {
+            "Type" : "AWS::EC2::SecurityGroup",
+            "Properties" : {
+                "GroupDescription" : "String",
+                "GroupName" : "String",
+                "SecurityGroupIngress" : [{
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 80,
+                    "ToPort"    : 80,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "http"
+                 },
+                  {
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 0,
+                    "ToPort"    : 65535,
+                    "Description" : "Public"
+                 },
+                    {  
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 443,
+                    "ToPort"    : 443,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "https"
+                 },
+                  {
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 9000,
+                    "ToPort"    : 9000,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "Hadoop"
+                 },
+                    {  
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 22,
+                    "ToPort"    : 22,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "ssh"
+                 },
+                    {  
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 23,
+                    "ToPort"    : 23,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "telnet"
+                 }, 
+                    {
+                   "FromPort"   : 25,
+                   "ToPort"    : 25,
+                   "IpProtocol"   : "tcp",
+                   "CidrIp"  : "0.0.0.0/0",
+                   "Description" : "SMTP"
+                 } ,
+                    {  
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 636,
+                    "ToPort"    : 636,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "LDAP"
+                 } ,
+                   {  
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 3389,
+                    "ToPort"    : 3389,
+                    "IpProtocol"   : "rdp",
+                    "Description" : "RDP"
+                 } ,
+                   {  
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 9200,
+                    "ToPort"    : 9200,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "ES1"
+                 },
+                  {
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 9300,
+                    "ToPort"    : 9300,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "ES2"
+                 },
+                  {
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 27017,
+                    "ToPort"    : 27017,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "Mongo"
+                 },
+                    {   
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 5432,
+                    "ToPort"    : 5432,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "Postgress"
+                 } ,
+                    {  
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 1521,
+                    "ToPort"    : 1521,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "Oracle"
+                 } ,
+                    {  
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 3306,
+                    "ToPort"    : 3306,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "MySQL"
+                 } ,
+                    {  
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 1434,
+                    "ToPort"    : 1434,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "MSSQLadmin"
+                 } ,
+                  {
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 1433,
+                    "ToPort"    : 1433,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "MSSQLadmin1"
+                 } ,
+                   {  
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 1434,
+                    "ToPort"    : 1434,
+                    "IpProtocol"   : "udp",
+                    "Description" : "MSSQLbrowser"
+                 }, 
+                    {  
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 7001,
+                    "ToPort"    : 7001,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "Cassandra"
+                 } , 
+                    {  
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 61621,
+                    "ToPort"    : 61621,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "cassandraops"
+                 } ,
+                    {
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 3020,
+                    "ToPort"    : 3020,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "CIFS"
+                 }, 
+                {
+                     "CidrIp" : "0.0.0.0/0",
+                    "FromPort"   : 4505,
+                    "ToPort"    : 4505,
+                    "IpProtocol"   : "tcp",
+                    "Description" : "SSM"
+                 }
+           ],
+                "Tags" : [ {
+                  "Key" : "keyname1",
+                  "Value" : "value1"
+               }],
+                "VpcId" : "String"
+              }
+            }
+        }
+    }
+  
