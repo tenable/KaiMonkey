@@ -1,4 +1,4 @@
-resource "aws_db_subnet_group" "km_rds_subnet_grp" {
+resource "aws_db_subnet_group" "km_rds_subnet_grp1234" {
   name       = "km_rds_subnet_grp_${var.environment}"
   subnet_ids = var.private_subnet
 
