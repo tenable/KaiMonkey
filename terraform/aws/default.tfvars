@@ -1,4 +1,4 @@
-region      = "us-east-1"
+region      = "us-east-2"
 environment = "development"
 db_username = "kai_monkey_user_ob6RGj"
 db_password = "kHJ!4dusp7A#Xf21URhhZ1#"
