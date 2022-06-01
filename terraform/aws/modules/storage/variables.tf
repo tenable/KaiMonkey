@@ -4,7 +4,7 @@ variable "environment" {
 
 variable "default_tags" {
   default     = {}
-  description = "default tags to resources"
+  description = "default tags to resource"
 }
 
 variable "private_subnet" {}
