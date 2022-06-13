@@ -1,0 +1,8 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  test-subnet-sp:
+    Type: AWS::EC2::Subnet
+    Properties: 
+      VpcId: test-vpc-sp
+      AvailabilityZone: "us-east-1a"
+      CidrBlock: 10.0.2.0/24

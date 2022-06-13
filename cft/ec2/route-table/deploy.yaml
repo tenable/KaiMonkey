@@ -1,0 +1,6 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  test-route-table: 
+    Type: AWS::EC2::RouteTable
+    Properties: 
+      VpcId: test-vpc-sp

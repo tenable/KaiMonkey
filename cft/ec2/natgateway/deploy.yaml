@@ -1,0 +1,8 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  myNatgw:
+    Type: AWS::EC2::NatGateway
+    Properties:
+      AllocationId: "eip-5869568596"
+      ConnectivityType: "public"
+      SubnetId: test-subnet-sp
