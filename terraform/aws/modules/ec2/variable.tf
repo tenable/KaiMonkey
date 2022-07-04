@@ -1,3 +1,3 @@
 variable "monitoring" {
- default = false
+ default = true
 }
