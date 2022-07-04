@@ -8,6 +8,7 @@ resource "aws_instance" "app_server123" {
   tags = {
     Name = "ExampleAppServerInstance"
   }
+}
   
 resource "aws_instance" "app_server11" {
   ami           = "ami-830c94e3"
@@ -17,4 +18,5 @@ resource "aws_instance" "app_server11" {
   tags = {
     Name = "ExampleAppServerInstance"
   }
+}
 
