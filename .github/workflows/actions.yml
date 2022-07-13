@@ -5,13 +5,13 @@ on:
   workflow_dispatch :
 env :
   API_URL : "https://int.api.zscwp.io"
-  AUTH_URL : "https://z-cwp-int.us.auth0.com"
+  AUTH_URL : "https://int-auth.zscwp.io"
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses : ZscalerCWP/Zscaler-IaC-Action@v0.2.1
+      - uses : ZscalerCWP/Zscaler-IaC-Action@main
         id : iac-scan
         with:
           client_id : ${{ secrets.ZSCANNER_CLIENT_ID }}
