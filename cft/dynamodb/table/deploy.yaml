@@ -1,0 +1,26 @@
+Resources:
+  DataDictionaryDynamoDBTable:   
+    Type: AWS::DynamoDB::Table
+    Properties:
+      SSESpecification:
+        SSEEnabled: "true"
+      AttributeDefinitions:
+        -
+          AttributeName: "Datalayer"
+          AttributeType: "S"
+        -
+          AttributeName: "queryId"
+          AttributeType: "S"
+      KeySchema:
+        -
+          AttributeName: "Datalayer"
+          KeyType: "HASH"
+        -
+          AttributeName: "queryId"
+          KeyType: "RANGE"
+      BillingMode: PROVISIONED
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: false
+      ProvisionedThroughput:
+        ReadCapacityUnits: "5"
+        WriteCapacityUnits: "5"
