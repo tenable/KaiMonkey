@@ -37,12 +37,3 @@ module "compute" {
   elb_sg = module.network.target_lb_security_group
   elb_url = module.network.elb_url
 }
-
-resource "local_file" "web-access123" {
-  content  = <<JSON
-{
-  "fqdn": "${module.network.elb_url}"
-}
-  JSON
-  filename = "./web-access.json"
-}
