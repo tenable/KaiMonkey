@@ -11,11 +11,11 @@ Resources:
       Monitoring: false
       NetworkInterfaces:
         - NetworkInterfaceId: nic1
-          DeviceIndex: 1
+          DeviceIndex: "1"
           DeleteOnTermination: false
           AssociatePublicIpAddress: false
         - NetworkInterfaceId: nic2
-          DeviceIndex: 2
+          DeviceIndex: "2"
           DeleteOnTermination: true
           AssociatePublicIpAddress: true
       Tags:
