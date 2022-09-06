@@ -1,0 +1,40 @@
+on: [push]
+
+jobs:
+  terrascan_terraform_job:
+    runs-on: ubuntu-latest
+    name: terrascan-terraform
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Run Terrascan for terraform
+      id: terrascan
+      uses: accurics/terrascan-action@main
+      with:
+        iac_type: 'terraform'
+        iac_version: 'v14'
+        only_warn: true
+        sarif_upload: true
+        iac_dir: 'terraform'
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: terrascan.sarif
+  terrascan_cft_job:
+    runs-on: ubuntu-latest
+    name: terrascan-cft
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Run Terrascan for cft
+      id: terrascan
+      uses: accurics/terrascan-action@main
+      with:
+        iac_type: 'cft'
+        only_warn: true
+        sarif_upload: true
+        iac_dir: 'cft'
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: terrascan.sarif
