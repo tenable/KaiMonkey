@@ -1,0 +1,23 @@
+{
+  "aws_dynamodb_table": [
+    {
+      "id": "aws_dynamodb_table.DataDictionaryDynamoDBTable",
+      "name": "DataDictionaryDynamoDBTable",
+      "source": "deploy.yaml",
+      "line": 1,
+      "type": "aws_dynamodb_table",
+      "config": {
+        "tags": null,
+        "name": "",
+        "server_side_encryption": [
+          {
+            "enabled": true
+          }
+        ]
+      },
+      "skip_rules": [],
+      "max_severity": "",
+      "min_severity": ""
+    }
+  ]
+}
