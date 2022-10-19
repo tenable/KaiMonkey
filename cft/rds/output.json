@@ -3,7 +3,7 @@
         {
             "id": "aws_db_instance.MyDB",
             "name": "MyDB",
-            "source": "db-instance/deploy.yml",
+            "source": "deploy.yml",
             "line": 1,
             "type": "aws_db_instance",
             "config": {
@@ -14,7 +14,17 @@
                 "ca_cert_identifier": "rds-ca-2020",
                 "storage_encrypted": false,
                 "iam_database_authentication_enabled": false,
-                "publicly_accessible": true
+                "publicly_accessible": true,
+                "backup_retention_period": 10,
+                "username": "",
+                "password": "",
+                "instance_class": "db.m5.large",
+                "engine": "MySQL",
+                "engine_version": "8.0.16",
+                "identifier": "mydbinstance",
+                "storage_type": "",
+                "delete_automated_backups": false,
+                "deletion_protection": false
             },
             "skip_rules": [],
             "max_severity": "",

@@ -1,8 +1,8 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: >-
-  Description": "AWS CloudFormation Sample Template for creating an Amazon RDS DB instance: 
-  Sample template showing how to create a DB instance with Enhanced Monitoring enabled. 
-  **WARNING** This template creates an RDS DB instance. You will be billed for the AWS 
+  Description": "AWS CloudFormation Sample Template for creating an Amazon RDS DB instance:
+  Sample template showing how to create a DB instance with Enhanced Monitoring enabled.
+  **WARNING** This template creates an RDS DB instance. You will be billed for the AWS
   resources used if you create a stack from this template.
 Parameters:
   DBInstanceID:
@@ -11,7 +11,7 @@ Parameters:
     Type: String
     MinLength: 1
     MaxLength: 63
-    AllowedPattern: '[a-zA-Z][a-zA-Z0-9]*'
+    AllowedPattern: "[a-zA-Z][a-zA-Z0-9]*"
     ConstraintDescription: >-
       Must begin with a letter and must not end with a hyphen or contain two
       consecutive hyphens.
@@ -21,7 +21,7 @@ Parameters:
     Type: String
     MinLength: 1
     MaxLength: 64
-    AllowedPattern: '[a-zA-Z][a-zA-Z0-9]*'
+    AllowedPattern: "[a-zA-Z][a-zA-Z0-9]*"
     ConstraintDescription: Must begin with a letter and contain only alphanumeric characters.
   DBInstanceClass:
     Default: db.m5.large
@@ -41,7 +41,7 @@ Parameters:
     Type: String
     MinLength: 1
     MaxLength: 16
-    AllowedPattern: '[a-zA-Z][a-zA-Z0-9]*'
+    AllowedPattern: "[a-zA-Z][a-zA-Z0-9]*"
     ConstraintDescription: must begin with a letter and contain only alphanumeric characters.
   DBPassword:
     NoEcho: true
@@ -49,11 +49,11 @@ Parameters:
     Type: String
     MinLength: 8
     MaxLength: 41
-    AllowedPattern: '[a-zA-Z0-9]*'
+    AllowedPattern: "[a-zA-Z0-9]*"
     ConstraintDescription: must contain only alphanumeric characters.
 Resources:
   MyDB:
-    Type: 'AWS::RDS::DBInstance'
+    Type: "AWS::RDS::DBInstance"
     Properties:
       DBInstanceIdentifier: !Ref DBInstanceID
       DBName: !Ref DBName
@@ -66,8 +66,9 @@ Resources:
       EnableIAMDatabaseAuthentication: false
       PubliclyAccessible: true
       EnableCloudwatchLogsExports:
+      BackupRetentionPeriod: 10
       # - audit
-      # - error 
+      # - error
       # - general
       # - slowquery
       # any string apart from  "rds-ca-2019"
@@ -76,4 +77,4 @@ Resources:
       MasterUsername: !Ref DBUsername
       MasterUserPassword: !Ref DBPassword
       MonitoringInterval: 60
-      MonitoringRoleArn: 'arn:aws:iam::123456789012:role/rds-monitoring-role'
+      MonitoringRoleArn: "arn:aws:iam::123456789012:role/rds-monitoring-role"
