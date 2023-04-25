@@ -1,10 +1,11 @@
 terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = "~> 3.11"
+  cloud {
+        organization = "taconet"
+
+        workspaces {
+            tags = ["app:taco"]
+        }
     }
-  }
 }
 
 provider "aws" {
