@@ -1,0 +1,91 @@
+{
+  "aws_instance": [
+    {
+      "id": "aws_instance.myinstance",
+      "name": "myinstance",
+      "source": "common.yml",
+      "line": 1,
+      "type": "aws_instance",
+      "config": {
+        "tags": null,
+        "name": "myinstance",
+        "ami": "",
+        "instance_type": "",
+        "ebs_optimized": false,
+        "hibernation": false,
+        "monitoring": false,
+        "iam_instance_profile": "",
+        "vpc_security_group_ids": null,
+        "network_interface": []
+      },
+      "skip_rules": [],
+      "max_severity": "",
+      "min_severity": ""
+    }
+  ],
+  "aws_ssm_parameter": [
+    {
+      "id": "aws_ssm_parameter.AdvancedParameter",
+      "name": "AdvancedParameter",
+      "source": "common.yml",
+      "line": 1,
+      "type": "aws_ssm_parameter",
+      "config": {
+        "tags": null,
+        "name": "AnotherName",
+        "description": "",
+        "type": "String",
+        "value": "anothervalue",
+        "tier": "",
+        "policies": "",
+        "allowed_pattern": ""
+      },
+      "skip_rules": [],
+      "max_severity": "",
+      "min_severity": ""
+    },
+    {
+      "id": "aws_ssm_parameter.BasicParameter",
+      "name": "BasicParameter",
+      "source": "common.yml",
+      "line": 1,
+      "type": "aws_ssm_parameter",
+      "config": {
+        "tags": null,
+        "name": "AvailabilityZone",
+        "description": "",
+        "type": "String",
+        "value": "somevalue",
+        "tier": "",
+        "policies": "",
+        "allowed_pattern": ""
+      },
+      "skip_rules": [],
+      "max_severity": "",
+      "min_severity": ""
+    },
+    {
+      "id": "aws_ssm_parameter.BasicParameterWithPolicieis",
+      "name": "BasicParameterWithPolicieis",
+      "source": "common.yml",
+      "line": 1,
+      "type": "aws_ssm_parameter",
+      "config": {
+        "tags": {
+          "Environment": "DEV"
+        },
+        "name": "command",
+        "description": "SSM Parameter for running date command.",
+        "type": "String",
+        "value": "date",
+        "tier": "Advanced",
+        "policies": "[{\"Type\":\"Expiration\",\"Version\":\"1.0\",\"Attributes\":{\"Timestamp\":\"2020-05-13T00:00:00.000Z\"}},{\"Type\":\"ExpirationNotification\",\"Version\":\"1.0\",\"Attributes\":{\"Before\":\"5\",\"Unit\":\"Days\"}},{\"Type\":\"NoChangeNotification\",\"Version\":\"1.0\",\"Attributes\":{\"After\":\"60\",\"Unit\":\"Days\"}}]",
+        "allowed_pattern": "^[a-zA-Z]{1,10}$"
+      },
+      "skip_rules": [],
+      "max_severity": "",
+      "min_severity": ""
+    }
+  ]
+}
+
