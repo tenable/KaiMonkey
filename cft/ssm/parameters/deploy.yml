@@ -1,0 +1,49 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Parameters:
+  AvailabilityZone:
+    Description: Amazon EC2 instance Availability Zone
+    Type: String
+  AMIId:
+    Description: The Amazon Machine Image id
+    Type: String
+  InstanceType:
+    Description: The Type of instance
+    Type: String
+Resources:
+  myinstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone:
+        Fn::GetAtt:
+        - BasicParameter
+        - Value
+      ImageId:
+        Ref: AMIId
+      InstanceType:
+        Ref: InstanceType
+  BasicParameter:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: AvailabilityZone
+      Type: String
+      Value: somevalue
+  AdvancedParameter:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: AnotherName
+      Type: String
+      Value: anothervalue
+
+  BasicParameterWithPolicieis:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: command
+      Type: String
+      Value: date
+      Tier: Advanced
+      Policies: '[{"Type":"Expiration","Version":"1.0","Attributes":{"Timestamp":"2020-05-13T00:00:00.000Z"}},{"Type":"ExpirationNotification","Version":"1.0","Attributes":{"Before":"5","Unit":"Days"}},{"Type":"NoChangeNotification","Version":"1.0","Attributes":{"After":"60","Unit":"Days"}}]'
+      Description: SSM Parameter for running date command.
+      AllowedPattern: "^[a-zA-Z]{1,10}$"
+      Tags:
+        Environment: DEV
