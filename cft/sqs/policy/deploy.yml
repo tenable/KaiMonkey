@@ -17,3 +17,24 @@ Resources:
             - "SQS:ReceiveMessage"
           Effect: "Allow"
           Principal: "*"
+
+  AlarmNumMessagesExceedsThreshold:
+    Type: AWS::CloudWatch::Alarm
+    DependsOn: SQSQueueProduct
+    Properties:
+      AlarmName: !Join [ "-", [ "sqs", !Ref QueueName, "num-exceeded" ] ]
+      AlarmDescription: 'CloudWatch Alarm'
+      AlarmActions: 
+        - !Join [ ":", [ "arn:aws:sns", !Ref AWS::Region, !Ref AWS::AccountId , "Direct-Customer-Alerts"  ] ]
+      Namespace: AWS/SQS
+      MetricName: ApproximateNumberOfMessages
+      Dimensions:
+        - Name: "QueueName"
+          Value: !Ref QueueName
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      EvaluationPeriods: 2    
+      Period: 300              
+      Statistic: SampleCount   
+      Threshold: !Ref AlarmNumMessageReceivedThreshold  # Desired threshold of approx. number of messages received
+
+
