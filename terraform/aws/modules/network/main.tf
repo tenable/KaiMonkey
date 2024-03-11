@@ -115,7 +115,7 @@ resource "aws_security_group" "km_alb_sg" {
     protocol    = "tcp"
     from_port   = 80
     to_port     = 80
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["10.0.0.0/0"]
   }
 
   egress {
@@ -165,7 +165,7 @@ resource "aws_lb_target_group" "km_lb_target" {
   protocol    = "HTTP"
   vpc_id      = aws_vpc.km_vpc.id
   target_type = "ip"
-  depends_on = [ aws_lb.km_lb ]
+  depends_on  = [aws_lb.km_lb]
 }
 
 # Redirect all traffic from the ALB to the target group
